@@ -15,7 +15,7 @@ function Main(props) {
 
 <Route exact path='/login' render={(props) => <Login {...props} />} />
 <Route exact path='/register' render={(props) => <Register {...props} />} />
-       <YTE embedId="G1QjyskJ9jw" />
+<Route exact path='/' render={(props) =>  <YTE embedId="G1QjyskJ9jw"/>}/> 
         </div>
     );
 }
