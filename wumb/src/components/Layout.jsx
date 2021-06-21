@@ -9,7 +9,8 @@ function Layout(props) {
   
     return (
         <div>
-         <Header isLoggedIn={isLoggedIn}/>
+         <Header isLoggedIn={isLoggedIn}
+                 setisLoggedIn={setisLoggedIn}/>
 
          <Main isLoggedIn={isLoggedIn}
                youtubeLink={youtubeLink}

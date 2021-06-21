@@ -1,8 +1,4 @@
-.cal-modal {
-  display: none;
-  z-index: 1;
-	overflow: auto;
-}
+
 
 .header-container {
   background-color: black;
@@ -11,11 +7,13 @@
   justify-content: space-between;
 }
 
+
 .nav {
   display: flex; 
   flex-direction: row;
   justify-content: space-between;
 }
+
 
 .react-calendar__month-view__weekdays {
   color: gray;
@@ -32,6 +30,11 @@
 #header-title {
   color: red;
   font-size: 1rem;
+}
+
+#logout-button {
+  background-color: black;
+  border: none;
 }
 
 #nav-link {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './Nav'
 
-function Header(isLoggedIn) {
+function Header(isLoggedIn, setisLoggedIn) {
     return (
         <div className="header-container">
             <div className ="header-text">
@@ -11,7 +11,8 @@ function Header(isLoggedIn) {
 
 
             <div className="nav-container">
-                <Nav isLoggedIn={isLoggedIn}/>
+                <Nav isLoggedIn={isLoggedIn}
+                     setisLoggedIn={setisLoggedIn}/>
             </div>
         </div>
     );

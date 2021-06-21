@@ -5,23 +5,13 @@ import Login from "../forms/Login";
 import Register from "../forms/Register";
 import Cal from "./CalContainer";
 
-//fetch call here?
-//set embedID in state?
-//log in via state or context?
 
+function Main(isLoggedIn, youtubeLink) {
 
-function Main(props) {
-  const [isLoggedIn, setisLoggedIn] = useState(true);
-  const [youtubeLink, setYoutubeLink] = useState("G1QjyskJ9jw");
-  
 
   let artist = "George Benson"
   let song = "Breezin'"
  
-
-
-
-
   if (!isLoggedIn) {
     return <div>Please log in!</div>;
   } else {
@@ -33,19 +23,19 @@ function Main(props) {
     return (
       <div className="main-container">
 
-       <div id="cal-modal">
+       <div className="calendar">
         <Cal />
        </div>
 
 
-
+      <div className="main">
         <Route exact path="/login"
                render={(props) => <Login {...props} />} />
         <Route exact path="/register"
           render={(props) => <Register {...props} />}/>
         <Route exact path="/"
           render={(props) => <YTE embedId={youtubeLink}  artist={artist} song={song} />}/>
-
+    </div>
 
 
       </div>

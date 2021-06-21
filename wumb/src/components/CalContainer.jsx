@@ -20,7 +20,7 @@ function CalContainer(props) {
                 onClick={openCalendar}>Open Calendar</button>
         
         </div>
-    );
+        );
     } else {
         return (
             <div className = "cal-container">
@@ -31,8 +31,7 @@ function CalContainer(props) {
                     <CalendarReact/>
                 </div>
             </div>
-        );
-
+          );
     }
 }
 
