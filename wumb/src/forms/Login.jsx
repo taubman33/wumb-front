@@ -17,14 +17,16 @@ const Login = (props) =>
         
         <input name="email" 
                type="text" 
-               value={props.formData.email} 
+            //    value={props.formData.email}
+               value="" 
                onChange={props.handleChange} />
 
         <p>Password:</p>
 
         <input name="password"
                type="password" 
-               value={props.formData.password} 
+            //    value={props.formData.password} 
+               value= ""
                onChange={props.handleChange} />
         <button className="button">Login</button>
       </form>
