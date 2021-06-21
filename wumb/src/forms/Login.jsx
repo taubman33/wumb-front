@@ -2,13 +2,13 @@ import React, {useState} from 'react'
 import { Redirect } from 'react-router-dom'
 
 
-const Login = (props) =>
+const Login = (props, isLoggedIn) =>
 {
 
-//     if (isLoggedIn())
-//         {
-//             return <Redirect to="/" />
-//         }
+    if (!isLoggedIn)
+        {
+            return <Redirect to="/" />
+        }
   return (
 
     <div>

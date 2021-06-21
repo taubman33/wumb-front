@@ -4,7 +4,7 @@ import Main from './Main'
 
 
 function Layout(props) {
-    const [isLoggedIn, setisLoggedIn] = useState(false);
+    const [isLoggedIn, setisLoggedIn] = useState(true);
     const [youtubeLink, setYoutubeLink] = useState("G1QjyskJ9jw");
   
     return (

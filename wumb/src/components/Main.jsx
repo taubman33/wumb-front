@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import YTE from "./Youtubeembed";
+import Home from "./Home"
 import Login from "../forms/Login";
 import Register from "../forms/Register";
 import Cal from "./CalContainer";
@@ -23,18 +24,14 @@ function Main(isLoggedIn, youtubeLink) {
     return (
       <div className="main-container">
 
-       <div className="calendar">
-        <Cal />
-       </div>
-
-
       <div className="main">
         <Route exact path="/login"
                render={(props) => <Login {...props} />} />
         <Route exact path="/register"
           render={(props) => <Register {...props} />}/>
-        <Route exact path="/"
+        <Route exact path="/player"
           render={(props) => <YTE embedId={youtubeLink}  artist={artist} song={song} />}/>
+        <Route exact path="/" component={Home}/>
     </div>
 
 

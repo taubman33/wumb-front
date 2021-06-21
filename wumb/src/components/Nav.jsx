@@ -9,7 +9,7 @@ function Nav(isLoggedIn, setisLoggedIn) {
     )
 
     let username = "JT33"
-    if (isLoggedIn){
+    if (!isLoggedIn){
         return (
             <div className ="nav">
              <Link to="/"> <h3 id="nav-link"> Home </h3> </Link>
