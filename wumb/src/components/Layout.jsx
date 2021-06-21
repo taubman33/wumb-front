@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header'
 import Main from './Main'
 
 
 function Layout(props) {
+    const [isLoggedIn, setisLoggedIn] = useState(false);
+    const [youtubeLink, setYoutubeLink] = useState("G1QjyskJ9jw");
+  
     return (
         <div>
-         <Header/>
-         <Main/> 
+         <Header isLoggedIn={isLoggedIn}/>
+
+         <Main isLoggedIn={isLoggedIn}
+               youtubeLink={youtubeLink}
+                /> 
         </div>
     );
 }

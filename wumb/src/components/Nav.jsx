@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-function Nav(props) {
+function Nav(isLoggedIn) {
 
-    let loggedin = false
+
     let username = "JT33"
-    if (!loggedin){
+    if (!isLoggedIn){
         return (
             <div className ="nav">
              <Link to="/"> <h3 id="nav-link"> Home </h3> </Link>

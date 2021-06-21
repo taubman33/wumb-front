@@ -1,3 +1,9 @@
+.cal-modal {
+  display: none;
+  z-index: 1;
+	overflow: auto;
+}
+
 .header-container {
   background-color: black;
   display: flex; 
@@ -11,7 +17,13 @@
   justify-content: space-between;
 }
 
+.react-calendar__month-view__weekdays {
+  color: gray;
+}
 
+.react-calendar__navigation button {
+  font-size: 1em;
+}
 
 .result-calendar {
   width: 30%;
@@ -27,11 +39,3 @@
   font-size: .5rem;
 }
 
-
-.react-calendar__month-view__weekdays {
-  color: gray;
-}
-
-.react-calendar__navigation button {
-  font-size: 1em;
-}
