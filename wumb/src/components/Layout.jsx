@@ -10,10 +10,10 @@ function Layout(props) {
     return (
         <div>
          <Header/>
-         <Main/>  
          <Nav/> 
          <Login/> 
          <Register/>
+         <Main/> 
         </div>
     );
 }

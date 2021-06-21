@@ -1,9 +1,11 @@
 import React from 'react';
+import YTE from './Youtubeembed'
+
 
 function Main(props) {
     return (
         <div>
-            Main
+       <YTE embedId="G1QjyskJ9jw" />
         </div>
     );
 }
