@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import YTE from './Youtubeembed'
 import Login from '../forms/Login'
 import Register from '../forms/Register'
+import Cal from '../assets/CalendarReact'
 
 
 //fetch call here?
@@ -11,8 +12,9 @@ import Register from '../forms/Register'
 
 function Main(props) {
     return (
-        <div>
+        <div className="main-container">
 
+            <Cal/>
 <Route exact path='/login' render={(props) => <Login {...props} />} />
 <Route exact path='/register' render={(props) => <Register {...props} />} />
 <Route exact path='/' render={(props) =>  <YTE embedId="G1QjyskJ9jw"/>}/> 
