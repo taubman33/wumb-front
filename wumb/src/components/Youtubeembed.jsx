@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-//other iframe and yte commands?
+
+const dummyData = [
+  {artist: "George Benson",
+   song: "Breezin'",
+   embedId:"G1QjyskJ9jw"},
+
+   {artist: "Doc Watson",
+   song: "Shady grove",
+   embedId:"b-kaG1NuLZM"},
 
 
-function YoutubeEmbed({ embedId, artist, song }){
+   {artist: "Scraper Blackwell",
+   song: "Nobody Knows You When You're Down and Out",
+   embedId:"626pNZB8xXE"},
+]
+
+
+
+function YoutubeEmbed({ embedId }){
+
+  const [num, setNum] = useState(0);
+
+  let artist = dummyData[num].artist
+  let song = dummyData[num].song
+  // let youtubeLink = dummyData[0].embedId
+ 
+  // function nextLink() {
+  //   num++
+  //   setNum(num)
+  // }
   return(
   <div className = "embed-container">
 
@@ -26,6 +52,11 @@ function YoutubeEmbed({ embedId, artist, song }){
 
         <div className="youtube-queue">
             <h3> next links</h3>
+
+
+            <button>
+              <h3> Next Video</h3>
+            </button>
         </div>
 
 

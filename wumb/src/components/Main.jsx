@@ -4,15 +4,13 @@ import YTE from "./Youtubeembed";
 import Home from "./Home"
 import Login from "../forms/Login";
 import Register from "../forms/Register";
-import Cal from "./CalContainer";
+
+
 
 
 function Main(isLoggedIn, youtubeLink) {
+  
 
-
-  let artist = "George Benson"
-  let song = "Breezin'"
- 
   if (!isLoggedIn) {
     return <div>Please log in!</div>;
   } else {
@@ -30,7 +28,7 @@ function Main(isLoggedIn, youtubeLink) {
         <Route exact path="/register"
           render={(props) => <Register {...props} />}/>
         <Route exact path="/player"
-          render={(props) => <YTE embedId={youtubeLink}  artist={artist} song={song} />}/>
+          render={(props) => <YTE embedId={youtubeLink} />}/>
         <Route exact path="/" component={Home}/>
     </div>
 
