@@ -15,7 +15,9 @@ export default function CalendarReact() {
 
     return (
         <div className="result-calendar">
-            <Calendar onChange={onChange} value={calDate} />
+            <Calendar onChange={onChange} 
+            value={calDate}
+             />
         </div>
     )
 
