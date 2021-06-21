@@ -5,17 +5,24 @@ import PropTypes from "prop-types";
 
 
 const YoutubeEmbed = ({ embedId }) => (
-  <div className="video-responsive">
+  
+  <div className = "embed-container">
+    <div className = "embed-text">
+      <h3> Artist:</h3>
+      <h3> Song: </h3>
+    </div>
 
-    <h3> Ginny Jones</h3>
-    <iframe
-      width="60%"
-      src={`https://www.youtube.com/embed/${embedId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="Embedded youtube"
-    />
+
+        <div className="video-responsive">
+          <iframe
+            width="60%"
+            src={`https://www.youtube.com/embed/${embedId}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Embedded youtube"
+          />
+        </div>
   </div>
 );
 
