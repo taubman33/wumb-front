@@ -22,7 +22,7 @@ export const getAllSongs = async () =>
 
 export const getSong = async (songId) =>
 {
-    let response = await tryCatchAPICall("GET", `/parks/${songId}`)
+    let response = await tryCatchAPICall("GET", `/songs/${songId}`)
     return response
 }
 
