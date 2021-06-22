@@ -51,9 +51,16 @@ function YoutubeEmbed({ embedId }){
 
 
         <div className="youtube-queue">
-            <h3> next links</h3>
+          {/* table */}
+            <h3> next links</h3>  
+            <h3> time: </h3>
+            <h3> Artist: {artist}</h3>
+          <h3> Song: {song} </h3>
+          <h3>Youtube Link:</h3>
+          {/* for loop to list items */}
+      </div>
 
-
+        <div className="yt-button">
             <button>
               <h3> Next Video</h3>
             </button>

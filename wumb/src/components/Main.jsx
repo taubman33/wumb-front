@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import YTE from "./Youtubeembed";
 import Home from "./Home"
@@ -9,7 +9,10 @@ import Register from "../forms/Register";
 
 
 function Main(isLoggedIn, youtubeLink) {
-  
+
+
+
+
 
   if (!isLoggedIn) {
     return <div>Please log in!</div>;
