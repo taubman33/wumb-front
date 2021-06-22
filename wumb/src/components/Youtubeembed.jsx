@@ -18,7 +18,9 @@ const YoutubeEmbed = ({ embedId }) => {
   }, []);
 
 
-  if (radioData && radioData[0]) {
+
+
+  if (radioData && radioData[num]) {
     return (
 
   <div className = "embed-container">
@@ -38,15 +40,16 @@ const YoutubeEmbed = ({ embedId }) => {
         </div>
 
 
-        <div className="youtube-queue">
-          {/* table */}
-            <h3> next links</h3>  
-            <h3> time: </h3>
-            <h3> Artist:</h3>
-          <h3> Song:  </h3>
-          <h3>Youtube Link:</h3>
-          {/* for loop to list items */}
-      </div>
+        <div className="row">
+        
+            <table id="simple-board">
+               <tbody>
+                 Title
+                 {/* {rows} */}
+               </tbody>
+             </table>
+      
+        </div>
 
         <div className="yt-button">
             <button>
