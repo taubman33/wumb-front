@@ -1,42 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 
-const dummyData = [
-  {artist: "George Benson",
-   song: "Breezin'",
-   embedId:"G1QjyskJ9jw"},
-
-   {artist: "Doc Watson",
-   song: "Shady grove",
-   embedId:"b-kaG1NuLZM"},
-
-
-   {artist: "Scraper Blackwell",
-   song: "Nobody Knows You When You're Down and Out",
-   embedId:"626pNZB8xXE"},
-]
 
 
 
 function YoutubeEmbed({ embedId }){
 
-  const [num, setNum] = useState(0);
+  const [radioData, setRadioData] = useState({});
 
-  let artist = dummyData[num].artist
-  let song = dummyData[num].song
-  // let youtubeLink = dummyData[0].embedId
- 
-  // function nextLink() {
-  //   num++
-  //   setNum(num)
-  // }
+  useEffect(() => {
+    fetch(`https://wumb-site-mock.herokuapp.com/yt-search`)
+      .then((res) => res.json())
+      .then((data) => {
+        setRadioData(data.items);
+      })
+      .catch(console.error);
+  }, []);
+
+
+  if (!radioData) {
+      console.log('no data!')
+  } else {
+  console.log(radioData[3].etag)
+  console.log(radioData[3].snippet.title)
   return(
   <div className = "embed-container">
 
         <div className = "embed-text">
-          <h3> Artist: {artist}</h3>
-          <h3> Song: {song} </h3>
+          <h3> Title: {radioData[3].snippet.title}  </h3>
         </div>
 
         <div className="video-responsive">
@@ -54,8 +46,8 @@ function YoutubeEmbed({ embedId }){
           {/* table */}
             <h3> next links</h3>  
             <h3> time: </h3>
-            <h3> Artist: {artist}</h3>
-          <h3> Song: {song} </h3>
+            <h3> Artist:</h3>
+          <h3> Song:  </h3>
           <h3>Youtube Link:</h3>
           {/* for loop to list items */}
       </div>
@@ -70,7 +62,7 @@ function YoutubeEmbed({ embedId }){
   </div>
 );
 }
-
+}
 YoutubeEmbed.propTypes = {
   embedId: PropTypes.string.isRequired
 };
