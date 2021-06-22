@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 
 
 
-
-
-function YoutubeEmbed({ embedId }){
+const YoutubeEmbed = ({ embedId }) => {
 
   const [radioData, setRadioData] = useState({});
+  const [num, setNum] = useState(0)
 
   useEffect(() => {
     fetch(`https://wumb-site-mock.herokuapp.com/yt-search`)
@@ -19,12 +18,9 @@ function YoutubeEmbed({ embedId }){
   }, []);
 
 
-  if (!radioData) {
-      console.log('no data!')
-  } else {
-  console.log(radioData[3].etag)
-  console.log(radioData[3].snippet.title)
-  return(
+  if (radioData && radioData[0]) {
+    return (
+
   <div className = "embed-container">
 
         <div className = "embed-text">
@@ -61,6 +57,11 @@ function YoutubeEmbed({ embedId }){
 
   </div>
 );
+}
+else {
+  return (
+    <div> no data!</div>
+  )
 }
 }
 YoutubeEmbed.propTypes = {
