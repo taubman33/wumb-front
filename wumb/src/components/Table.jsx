@@ -1,36 +1,49 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useTable } from "react-table";
 
 
 
-export default function Table () {   
+export default function Table ({radioData, num}) {   
+  const [columnData, setcolumnData] = useState(radioData)
+   
+  useEffect(() => {  
+    setcolumnData(radioData)
+    // console.log(columnData)
+    console.log(columnData[num].etag)
+  });
+  // console.log(columnData)
+  // console.log(columnData[0])
+  // console.log(columnData[0].etag)
 
-  const data = React.useMemo(
-    () => [
+  
+
+
+  const data = React.useMemo((columnData, radioData, num) =>
+ 
+    [
       {
         col1: '11:11',
-        col2: 'Jerry Garcia',
+        // col2: `${columnData[0].etag}`,
         col3: 'Link.com/ienienwvrnvrknvq'
       },
       {
         col1: '11:15',
-        col2: 'Jerry Gdddarcia',
-        col3: 'Link.com/ienklmlmienwvrnvrknvq'
+        // col2: `${columnData[1].snippet.name}`,
+        // col3: `${columnData[1].etag}`
       },
       {
         col1: '11:18',
-        col2: 'Jerry Garciaaa',
-        col3: 'Link.com/ienienddssdwwvrnvrknvq'
-      },
-    ],
-    []
+        // col2: `${columnData[2].snippet.name}`,
+        // col3: `${columnData[1].etag}`
+      }
+    ]
   )
 
-  const columns = React.useMemo(
-    () => [
+
+  const columns = React.useMemo(() => [
       {
         Header: 'Time',
-        accessor: 'col1', // accessor is the "key" in the data
+        accessor: 'col1', 
       },
       {
         Header: 'Title',
@@ -46,7 +59,9 @@ export default function Table () {
 
  const tableInstance = useTable({ columns, data })
  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance
-
+ 
+ 
+if (radioData && radioData[num]) {
 return (
   // apply the table props
   <table {...getTableProps()}>
@@ -91,4 +106,9 @@ return (
     </tbody>
   </table>
 )
+} else {
+  return (
+    <div> No data!</div>
+  )
+}
 }

@@ -2,24 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 
-
-const YoutubeEmbed = ({ embedId }) => {
-
-  const [radioData, setRadioData] = useState({});
-  const [num, setNum] = useState(0)
-
-  useEffect(() => {
-    fetch(`https://wumb-site-mock.herokuapp.com/yt-search`)
-      .then((res) => res.json())
-      .then((data) => {
-        setRadioData(data.items);
-      })
-      .catch(console.error);
-  }, []);
-
-
-
-
+const YoutubeEmbed = ({ embedId, radioData, num }) => {
   if (radioData && radioData[num]) {
     return (
 
@@ -37,18 +20,6 @@ const YoutubeEmbed = ({ embedId }) => {
             allowFullScreen
             title="Embedded youtube"
           />
-        </div>
-
-
-        <div className="row">
-        
-            <table id="simple-board">
-               <tbody>
-                 Title
-                 {/* {rows} */}
-               </tbody>
-             </table>
-      
         </div>
 
         <div className="yt-button">
