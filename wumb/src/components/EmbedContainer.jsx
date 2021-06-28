@@ -9,7 +9,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
     const [num, setNum] = useState(0)
 
   useEffect(() => {
-    fetch(`https://wumb-site-mock.herokuapp.com/yt-search`)
+    fetch(`https://wumb-proxy-2.herokuapp.com/parse`)
       .then((res) => res.json())
       .then((data) => {
         setRadioData(data.items);

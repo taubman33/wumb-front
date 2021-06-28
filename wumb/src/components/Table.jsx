@@ -9,10 +9,12 @@ export default function Table ({radioData, num}) {
   useEffect(() => {  
     setcolumnData(radioData)
     // console.log(columnData)
-    console.log(columnData[num].etag)
+    // console.log(columnData[num].etag)
+
+    
   });
   // console.log(columnData)
-  // console.log(columnData[0])
+  console.log(columnData[0])
   // console.log(columnData[0].etag)
 
   
