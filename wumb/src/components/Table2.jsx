@@ -1,14 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const url ="null"
+
+
 
 //finding proper url to pull from
 //pulling data -> setting any # of things in state?
 //running parser -> html data to jsx?
 // rendering parsed data -> table w correct styling
 
-function scrapeArchive () {
-    fetch(url)
+function Table2 () {
+    
+    //creating state for eventually pulled data
+    const [data, setdata] = useState({})
+
+    //scraper endpoint
+    const scraperEndpoint = {PROD_ON} ? "https://wumb-proxy-1.herokuapp.com/parse" + scraperParam: "http://127.0.0.1:3003/parse" + scraperParam
+
+    //displaying the playlist table to render
+    function displayPlaylistTable(playlist, v1=false) {
+        //creating table and initiating rows and columns
+        const table = document.createElement("table")
+        let row     = null
+        let col     = null
+        if (bTestingMaxRows) {
+            playlist = playlist.slice(0, testMaxRows)
+        }
+        playlist.forEach(item => {
+            row = document.createElement("tr")
+            for (key of ["time", "artist", "title"]) {
+                col = document.createElement("td")
+                col.innerText = item[key]
+                row.appendChild(col)
+            }
+
+            if (!v1) {
+                col = document.createElement("td")
+                col.innerText = "loading..."
+                setElementValue(col, item, maxRes=1)
+                row.appendChild(col)
+            }
+            table.appendChild(row)
+            
+            if (v1) {
+                row = document.createElement("tr")
+                col = document.createElement("td")
+                col.innerText = "loading..."
+                setElementValue(col, item)
+                row.appendChild(col)
+                table.appendChild(row)
+            }
+        })
+        const div = document.getElementById("playlistMain")
+        div.appendChild(table)
+        setHighlightClass(v1=v1)
+        
+    }
+
+
+
+    fetch(scraperEndpoint)
     .then(res => {
         res.text()   
             .then(body => {
@@ -28,19 +78,6 @@ function scrapeArchive () {
                 
             })
     })
-}
-
-
-
-
-
-
-function Table2(props) {
-    return (
-        <div>
-            
-        </div>
-    );
 }
 
 export default Table2;
