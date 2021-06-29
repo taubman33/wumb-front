@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 
-
-
-
 //finding proper url to pull from
 //pulling data -> setting any # of things in state?
 //running parser -> html data to jsx?
@@ -14,17 +11,19 @@ function Table2 () {
     const [data, setdata] = useState({})
 
     //scraper endpoint
-    const scraperEndpoint = {PROD_ON} ? "https://wumb-proxy-1.herokuapp.com/parse" + scraperParam: "http://127.0.0.1:3003/parse" + scraperParam
+    // const scraperEndpoint = {PROD_ON} ? "https://wumb-proxy-1.herokuapp.com/parse" + scraperParam: "http://127.0.0.1:3003/parse" + scraperParam
+     const scraperEndpoint = "fake"
 
+     
     //displaying the playlist table to render
     function displayPlaylistTable(playlist, v1=false) {
         //creating table and initiating rows and columns
         const table = document.createElement("table")
         let row     = null
         let col     = null
-        if (bTestingMaxRows) {
-            playlist = playlist.slice(0, testMaxRows)
-        }
+        // if (bTestingMaxRows) {
+        //     playlist = playlist.slice(0, testMaxRows)
+        // }
         playlist.forEach(item => {
             row = document.createElement("tr")
             for (key of ["time", "artist", "title"]) {
