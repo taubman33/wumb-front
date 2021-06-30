@@ -14,7 +14,7 @@ export default function Table ({radioData, num}) {
     
   });
   // console.log(columnData)
-  console.log(columnData[0])
+  // console.log(columnData[0])
   // console.log(columnData[0].etag)
 
   
