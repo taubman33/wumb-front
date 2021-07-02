@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 
@@ -9,7 +9,8 @@ const YoutubeEmbed = ({ embedId, radioData, num }) => {
   <div className = "embed-container">
 
         <div className = "embed-text">
-          <h3> Title: {radioData[3].snippet.title}  </h3>
+          {/* <h3> Title: {radioData[3].snippet.title}  </h3> */}
+          title: 
         </div>
 
         <div className="video-responsive">

@@ -5,8 +5,8 @@ import Main from './Main'
 
 function Layout(props) {
     const [isLoggedIn, setisLoggedIn] = useState(false);
-    const [youtubeLink, setYoutubeLink] = useState("G1QjyskJ9jw");
-  
+    // const [youtubeLink, setYoutubeLink] = useState("G1QjyskJ9jw");
+    const youtubeLink = "G1QjyskJ9jw"
     return (
         <div>
          <Header isLoggedIn={isLoggedIn}

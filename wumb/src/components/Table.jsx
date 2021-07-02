@@ -13,14 +13,9 @@ export default function Table ({radioData, num}) {
 
     
   });
-  // console.log(columnData)
-  // console.log(columnData[0])
-  // console.log(columnData[0].etag)
-
-  
 
 
-  const data = React.useMemo((columnData, radioData, num) =>
+  const data = useMemo((columnData, num) =>
  
     [
       {
@@ -31,7 +26,7 @@ export default function Table ({radioData, num}) {
       {
         col1: '11:15',
         // col2: `${columnData[1].snippet.name}`,
-        // col3: `${columnData[1].etag}`
+        col3: `ek1en44kvew3`
       },
       {
         col1: '11:18',
@@ -42,7 +37,7 @@ export default function Table ({radioData, num}) {
   )
 
 
-  const columns = React.useMemo(() => [
+  const columns = useMemo(() => [
       {
         Header: 'Time',
         accessor: 'col1', 
@@ -91,7 +86,7 @@ return (
         prepareRow(row)
         return (
           // Apply the row props
-          <tr {...row.getRowProps()}>
+          <tr className="rows" {...row.getRowProps()}>
             {// Loop over the rows cells
             row.cells.map(cell => {
               // Apply the cell props

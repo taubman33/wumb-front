@@ -1,6 +1,6 @@
 
 .header-container {
-  background-color: black;
+  background-color:rgb(142, 69, 6) ;
   display: flex; 
   flex-direction: row;
   justify-content: space-between;
@@ -27,7 +27,7 @@
 }
 
 
-.row {
+.rows {
   border:1px solid black;
 }
 
@@ -41,7 +41,7 @@
 }
 
 #header-title {
-  color: red;
+  color: rgb(7, 179, 90);
   font-size: 1rem;
 }
 
@@ -55,3 +55,61 @@
   font-size: .5rem;
 }
 
+
+/* Postman Styles  */
+
+#LeftSideBarContainerOffline {
+
+  float: left;
+  width: 240px;
+  margin: 38px 0 0 0;
+  padding: 20px 0 20px 0;
+  background-color: #F2F2E8;
+  display: inline;
+  z-index: 1;
+
+}
+
+#ArchiveTable {
+
+  width: 240px;
+  margin: 0px;
+  border: none;
+  border-collapse: collapse;
+
+}
+
+.ArchiveTableCell {
+
+  width: 240px;
+  padding: 0px;
+  text-align: center;
+  vertical-align: top;
+
+}
+
+#MainContentContainerOffline {
+
+  float: left;
+  width: 674px;
+  min-height: 420px;
+  margin: 38px 0 0 0;
+  padding: 0 0 20px 10px;
+  background-color: #F2F2E8;
+  display: inline;
+  z-index: 1;
+
+}
+
+#TitleBannerContainer {
+
+  position: absolute;
+  left: 286px;
+  top: 201px;
+  width: 446px;
+  height: 30px;
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+  z-index: 2;
+}
