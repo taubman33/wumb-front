@@ -9,21 +9,18 @@ import Searchbar from './Searchbar'
 
 const EmbedContainer = (embedId, youtubeLink) => {
 
-    const [radioData, setRadioData] = useState([]);
+    const [radioData, setRadioData] = useState('');
     // const [num, setNum] = useState(0)
     const num = 0
 
   useEffect(() => {
  
       fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=false&d=210522`)
-      // .then((res) => res.json())
+      .then((res) =>(res.text()))
       .then((res) => {
-        // setRadioData(ReactDOMServer.renderToString([res]))
-        parse(res)
-        setRadioData(res)
+      setRadioData(ReactDOMServer.renderToString(res))
         console.log(radioData)
       })
-      .then(console.log("type of", typeof (radioData)))
       .then(console.log("hello", radioData))
       .catch(console.error);
 
@@ -40,9 +37,9 @@ const EmbedContainer = (embedId, youtubeLink) => {
             <YTE embedId={youtubeLink} radioData={radioData} num={num}/>
             </div>
 
-            {/* <div className="queue-table">
+            <div className="queue-table">
             <Table radioData={radioData} num={num}/>
-            </div> */}
+            </div>
 
         </div>
     );
