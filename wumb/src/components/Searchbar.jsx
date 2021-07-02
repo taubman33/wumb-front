@@ -1,6 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Cal from './CalContainer'
+
+
 function Searchbar(props) {
+ 
+    const [dateInput,  setDateInput] = useState('')
+    const [timeInput,  setTimeInput] = useState('')
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        console.log('button working')
+    }
+
+    const handleDateSubmit =(ev) => {
+          setDateInput(ev.target.value)
+    }
+
+    const handleTimeSubmit =(evt) => {
+          setTimeInput(evt.target.value)
+    }
+
     return (
         <div className ="searchbar-container">
 
@@ -11,17 +30,19 @@ function Searchbar(props) {
         <div className="search-date-form">        
         <form>
             <input type="text"
-                   placeholder="enter month mm/dd/yy">
+                   placeholder="enter month mm/dd/yy"
+                   value={dateInput}
+                   onChange={handleDateSubmit}>
+                   
             </input>
-        </form>
-        </div>    
 
-
-        <div className="search-time-form">        
-        <form>
             <input type="text"
-                   placeholder="enter time">
+                   placeholder="enter time"
+                   value={timeInput}
+                   onChange={handleTimeSubmit}>
             </input>
+
+            <button onClick={handleClick}> Search WUMB Playlist</button>
         </form>
         </div>    
 
