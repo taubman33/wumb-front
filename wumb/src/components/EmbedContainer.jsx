@@ -14,23 +14,39 @@ const EmbedContainer = (embedId, youtubeLink) => {
     const num = 0
 
   useEffect(() => {
- 
       fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=false&d=210522`)
       .then((res) =>(res.text()))
-      .then((res) => {
-      setRadioData(ReactDOMServer.renderToString(res))
-        console.log(radioData)
-      })
-      .then(console.log("hello", radioData))
+      .then(body => {
+
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(body, 'text/html')
+        const tbs = doc.querySelector("#MainContentTextOnly").querySelectorAll("tbody")
+
+        const data = Array.from(tbs).map( tb => {
+            return {
+                time: tb.children[0].children[0].innerText.replaceAll("\n", ""), 
+                artist: tb.children[0].children[1].innerText.replaceAll("\n", ""), 
+                title: tb.children[1].innerText.replaceAll("\n", "")
+            }
+        })
+        setRadioData(data)
+   
+        // displayPlaylistTable(data)   
+        
+    })
       .catch(console.error);
 
-  }, [radioData]);
+  }, []);
 
+  
+  // console.log(radioData[0].time) 
 
     return (
         <div className="embed-container">
 
-          <div className="searchbar-container">
+
+
+           <div className="searchbar-container">
             <Searchbar/>
           </div>
             <div className="youtube-player">

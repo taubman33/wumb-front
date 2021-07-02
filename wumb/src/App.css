@@ -1,3 +1,7 @@
+.cal-start {
+  display: block;
+}
+
 
 .header-container {
   background-color:rgb(142, 69, 6) ;
@@ -39,6 +43,14 @@
 .row-odd {
   background-color: bisque;
 }
+
+
+.searchbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 #header-title {
   color: rgb(7, 179, 90);

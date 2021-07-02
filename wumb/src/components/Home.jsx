@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import Cal from './CalContainer'
 
 function Home(props) {
 
         return (
             <div className ="home-screen-container">  
-                    <div className="calendar">
-                    <Cal />
-                    </div>
+             
      
              
                     <div className="home-text-container">
