@@ -10,11 +10,23 @@ import Searchbar from './Searchbar'
 const EmbedContainer = (embedId, youtubeLink) => {
 
     const [radioData, setRadioData] = useState('');
+    const [searchYear, setSearchYear] = useState(21)
+    //can not start with 0, needs to be single digit for 1-9 (Jan-Sept), but 10-12 (Oct-Dec) will work with no problem here
+    //for dates too (1-9 vs 10-31)
+
+    //with calendar data being passed up and down we may have to use Context for this. 
+    const [searchMonth, setSearchMonth] = useState(5)
+    const [searchDay, setSearchDay] = useState(22)
+
+
+
     // const [num, setNum] = useState(0)
     const num = 0
 
+    
+
   useEffect(() => {
-      fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=false&d=210522`)
+      fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=false&d=${searchYear}0${searchMonth}${searchDay}`)
       .then((res) =>(res.text()))
       .then(body => {
 
@@ -41,6 +53,9 @@ const EmbedContainer = (embedId, youtubeLink) => {
   
   // console.log(radioData[0].time) 
 
+
+  //need Youtube ID for Embed Link -> Different API call here? 
+  //Fetch to receieve Embed Link and then pass it into here stately
     return (
         <div className="embed-container">
 
