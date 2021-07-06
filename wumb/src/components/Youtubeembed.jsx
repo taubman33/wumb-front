@@ -35,7 +35,7 @@ const YoutubeEmbed = ({ embedId, radioData, num }) => {
 }
 else {
   return (
-    <div> no data!</div>
+    <div> Loading, please wait </div>
   )
 }
 }

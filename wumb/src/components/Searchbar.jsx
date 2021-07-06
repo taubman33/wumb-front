@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import Cal from './CalContainer'
+import AmPmButton from './AmPmButton'
 
 
 function Searchbar(props) {
  
     const [dateInput,  setDateInput] = useState('')
     const [timeInput,  setTimeInput] = useState('')
+
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -32,8 +34,7 @@ function Searchbar(props) {
             <input type="text"
                    placeholder="enter month mm/dd/yy"
                    value={dateInput}
-                   onChange={handleDateSubmit}>
-                   
+                   onChange={handleDateSubmit}>       
             </input>
 
             <input type="text"
@@ -41,8 +42,17 @@ function Searchbar(props) {
                    value={timeInput}
                    onChange={handleTimeSubmit}>
             </input>
+             
+         <AmPmButton/>
 
-            <button onClick={handleClick}> Search WUMB Playlist</button>
+            <button 
+            className="NavButton"
+             onClick={handleClick}> 
+             Search WUMB Playlist
+             </button>
+       
+     
+       
         </form>
         </div>    
 

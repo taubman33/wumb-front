@@ -11,6 +11,7 @@ export default function CalendarReact() {
     function onChange (calDate) {
         // change results based on calendar date click
         setCalDate(calDate)
+        console.log(calDate)
     }
 
     return (

@@ -51,7 +51,7 @@ function Table({radioData, num}) {
   else {
     return (
       <div>
-        no data!
+      Loading, Please Wait!
       </div>
     )
   }

@@ -17,7 +17,7 @@ export const getLoggedInUser = () =>
 
 const setUser = (user) =>
 {
-    window.localStorage.setItem("NiceParkApp", JSON.stringify(user))
+    window.localStorage.setItem("ListenWumb", JSON.stringify(user))
 }
 
 export const handleLogin = async ({ email, password }, callback) =>
