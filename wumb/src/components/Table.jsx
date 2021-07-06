@@ -3,17 +3,20 @@ import React from 'react';
 
 function Table({radioData, num}) {
 
-  console.log(radioData[num])
 
   if (radioData ) {
   return (
     <div className="table">
       <table>
-  <tr className ="table-header">
-    <th>Time</th>
-    <th>Artist</th>
-    <th>Title</th>
-  </tr>
+          <thead>   
+              <tr className ="table-header">
+                <th>Time</th>
+                <th>Artist</th>
+                <th>Title</th>
+              </tr>
+          </thead>
+
+      <tbody>
   <tr className = 'row row-odd'>
     <td>{radioData[num].time}</td>
     <td>{radioData[num].artist}</td>
@@ -44,6 +47,9 @@ function Table({radioData, num}) {
     <td>{radioData[5].artist}</td>
     <td>{radioData[5].title}</td>
   </tr>
+  </tbody>
+
+
 </table>
 
     </div>

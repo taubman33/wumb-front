@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import CalendarReact from '../assets/CalendarReact';
 
-function CalContainer(props) {
+function CalContainer({handleDateSubmit}) {
 
     const [showModal, setShowModal] = useState(false)
     const openCalendar = () => {
@@ -12,6 +12,10 @@ function CalContainer(props) {
         setShowModal(false)
       }
 
+
+
+
+      
     if (!showModal) {
     return (
         <div className = "cal-container">
@@ -28,7 +32,7 @@ function CalContainer(props) {
             <button id="openModal"
                     onClick={closeCalendar}>Close Calendar</button>
                 <div className="cal-start">
-                    <CalendarReact/>
+                    <CalendarReact onClick={handleDateSubmit}/>
                 </div>
             </div>
           );

@@ -26,11 +26,12 @@ function Searchbar(props) {
         <div className ="searchbar-container">
 
        <div className="calendar">
-                    <Cal />
+                    <Cal onChange={handleDateSubmit}
+                        handleDateSubmit={handleDateSubmit}/>
                     </div>
 
-        <div className="search-date-form">        
-        <form>
+        <div className="search-date-form-container">        
+        <form className="search-date-form">
             <input type="text"
                    placeholder="enter month mm/dd/yy"
                    value={dateInput}
@@ -50,8 +51,6 @@ function Searchbar(props) {
              onClick={handleClick}> 
              Search WUMB Playlist
              </button>
-       
-     
        
         </form>
         </div>    

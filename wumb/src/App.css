@@ -50,12 +50,17 @@
 }
 
 
+ .search-date-form {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+
 .searchbar-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
-
+  justify-content: space-around;
+} 
 
 #header-title {
   color: rgb(7, 179, 90);

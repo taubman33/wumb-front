@@ -1,7 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import ReactDOMServer from 'react-dom/server';
-// import ReactHtmlParser from 'react-html-parser';
-import parse from 'html-react-parser';
 import YTE from './Youtubeembed'
 import Table from './Table'
 import Searchbar from './Searchbar'
@@ -23,6 +20,8 @@ const EmbedContainer = (embedId, youtubeLink) => {
     // const [num, setNum] = useState(0)
     const num = 0
 
+
+    //if else for 5 vs 05 in month and day
     
 
   useEffect(() => {
@@ -42,14 +41,14 @@ const EmbedContainer = (embedId, youtubeLink) => {
             }
         })
         setRadioData(data)
-   
-        // displayPlaylistTable(data)   
         
     })
       .catch(console.error);
 
   }, []);
 
+
+  
   
   // console.log(radioData[0].time) 
 

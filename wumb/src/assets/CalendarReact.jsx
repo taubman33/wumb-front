@@ -6,11 +6,12 @@ import 'react-calendar/dist/Calendar.css';
 
 export default function CalendarReact() {
     // set states of calendar date
-    const [calDate, setCalDate] = useState(new Date())
+    let newDate = new Date()
+    const [calDate, setCalDate] = useState(newDate)
 
-    function onChange (calDate) {
-        // change results based on calendar date click
-        setCalDate(calDate)
+    function onChange (newDate) {
+        setCalDate(newDate)
+        // Date.parse(calDate)
         console.log(calDate)
     }
 
@@ -18,7 +19,7 @@ export default function CalendarReact() {
         <div className="result-calendar">
             <Calendar onChange={onChange} 
             value={calDate}
-             />
+             /> 
         </div>
     )
 
