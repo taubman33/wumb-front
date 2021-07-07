@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import EmbedContainer from "./EmbedContainer";
+import EmbedContainer from "./ContentContainer";
 import Home from "./Home"
 import Login from "../forms/Login";
 import Register from "../forms/Register";

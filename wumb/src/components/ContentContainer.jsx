@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import YTE from './Youtubeembed'
-import Table from './Table'
+import TableContainer from './TableContainer'
 import Searchbar from './Searchbar'
 
 
@@ -20,32 +20,30 @@ const EmbedContainer = (embedId, youtubeLink) => {
     // const [num, setNum] = useState(0)
     const num = 0
 
-
-    //if else for 5 vs 05 in month and day
     
+  //fetch code + return for table.
+  // useEffect(() => {
+  //     fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=true&d=${searchYear}${searchMonth}${searchDay}`)
+  //     .then((res) =>(res.text()))
+  //     .then(body => {
 
-  useEffect(() => {
-      fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=true&d=${searchYear}${searchMonth}${searchDay}`)
-      .then((res) =>(res.text()))
-      .then(body => {
+  //       const parser = new DOMParser()
+  //       const doc = parser.parseFromString(body, 'text/html')
+  //       const tbs = doc.querySelector("#MainContentTextOnly").querySelectorAll("tbody")
 
-        const parser = new DOMParser()
-        const doc = parser.parseFromString(body, 'text/html')
-        const tbs = doc.querySelector("#MainContentTextOnly").querySelectorAll("tbody")
-
-        const data = Array.from(tbs).map( tb => {
-            return {
-                time: tb.children[0].children[0].innerText.replaceAll("\n", ""), 
-                artist: tb.children[0].children[1].innerText.replaceAll("\n", ""), 
-                title: tb.children[1].innerText.replaceAll("\n", "")
-            }
-        })
-        setRadioData(data)
+  //       const data = Array.from(tbs).map( tb => {
+  //           return {
+  //               time: tb.children[0].children[0].innerText.replaceAll("\n", ""), 
+  //               artist: tb.children[0].children[1].innerText.replaceAll("\n", ""), 
+  //               title: tb.children[1].innerText.replaceAll("\n", "")
+  //           }
+  //       })
+  //       setRadioData(data)
         
-    })
-      .catch(console.error);
+  //   })
+  //     .catch(console.error);
 
-  }, []);
+  // }, []);
 
 
 
@@ -63,7 +61,11 @@ const EmbedContainer = (embedId, youtubeLink) => {
             </div>
 
             <div className="queue-table">
-            <Table radioData={radioData} num={num}/>
+            <TableContainer radioData={radioData}
+                            searchDay={searchDay}
+                            searchMonth={searchMonth}
+                            searchYear={searchYear}
+                            num={num}/>
             </div>
 
         </div>
