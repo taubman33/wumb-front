@@ -8,12 +8,9 @@ const EmbedContainer = (embedId, youtubeLink) => {
 
     const [radioData, setRadioData] = useState('');
     const [searchYear, setSearchYear] = useState('21')
-    // as a number - can not start with 0, needs to be single digit for 1-9 (Jan-Sept), but 10-12 (Oct-Dec) will work with no problem here
-    //for dates too (1-9 vs 10-31)
 
-    //with calendar data being passed up and down we may have to use Context for this. 
     const [searchMonth, setSearchMonth] = useState('06')
-    const [searchDay, setSearchDay] = useState('28')
+    const [searchDay, setSearchDay] = useState('27')
 
 
 
@@ -23,6 +20,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
     
   // fetch code + return for table.
   useEffect(() => {
+
       fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=true&d=${searchYear}${searchMonth}${searchDay}`)
       .then((res) =>(res.text()))
       .then(body => {
@@ -30,7 +28,8 @@ const EmbedContainer = (embedId, youtubeLink) => {
         const parser = new DOMParser()
         const doc = parser.parseFromString(body, 'text/html')
         const tbs = doc.querySelector("#MainContentTextOnly").querySelectorAll("tbody")
-
+        
+        console.log(tbs);
         const data = Array.from(tbs).map( tb => {
             return {
                 time: tb.children[0].children[0].innerText.replaceAll("\n", ""), 
@@ -43,7 +42,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
     })
       .catch(console.error);
 
-  }, []);
+  }, [searchYear, searchMonth, searchDay]);
 
 
 
@@ -54,7 +53,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
         <div className="embed-container">
 
            <div className="searchbar-container">
-            <Searchbar/>
+            <Searchbar setSearchYear={setSearchYear} setSearchMonth={setSearchMonth} setSearchDay={setSearchDay} />
           </div>
             <div className="youtube-player">
             <YTE embedId={youtubeLink} radioData={radioData} num={num}/>

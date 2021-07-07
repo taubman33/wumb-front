@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import CalendarReact from './CalendarReact';
 
 
@@ -8,7 +8,7 @@ import CalendarReact from './CalendarReact';
 //parsing the date to the format we need (see indivdual CalendarReact component for more notes)
 //and this here calendar realllly doesn't like being in Flex. So we'll see what we'll have to do to style it up
 
-function CalContainer({handleDateSubmit}) {
+function CalContainer({handleDateSubmit, setSearchYear, setSearchMonth, setSearchDay}) {
 
     const [showModal, setShowModal] = useState(false)
     const openCalendar = () => {
@@ -18,6 +18,7 @@ function CalContainer({handleDateSubmit}) {
       const closeCalendar = () => {
         setShowModal(false)
       }
+    
 
       
     if (!showModal) {
@@ -36,7 +37,7 @@ function CalContainer({handleDateSubmit}) {
             <button id="openModal"
                     onClick={closeCalendar}>Close Calendar</button>
                 <div className="cal-start" style={{display:'block'}}>
-                    <CalendarReact onClick={handleDateSubmit}/>
+                    <CalendarReact onClick={handleDateSubmit} {...{setSearchYear, setSearchMonth, setSearchDay}}/>
                 </div>
             </div>
           );
