@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Cal from "../assets/Calendar";
+import Calendar from "../assets/Calendar";
 
 
 function Searchbar(props) {
@@ -29,7 +29,7 @@ function Searchbar(props) {
         <span id="lookupPrompt">Chose a time and date for playlist...</span>
 
         <div className="calendar">
-        <Cal/>
+        <Calendar/>
        </div>
         
         <input type="time"
