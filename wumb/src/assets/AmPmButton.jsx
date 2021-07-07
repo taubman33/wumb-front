@@ -25,7 +25,7 @@ function AmPmButton() {
 
     const [option, setOption] = useState(options[0])
 
- 
+    console.log(option.value)
     return (
         <div>
 

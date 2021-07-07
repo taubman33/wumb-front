@@ -19,6 +19,7 @@ function MinuteButton(props) {
     
         const [option, setOption] = useState(options[0])
     
+        console.log(option.value)
      
         return (
             <div>

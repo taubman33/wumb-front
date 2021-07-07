@@ -11,22 +11,22 @@ function HourButton(props) {
         }
     
         const options = [
-            { value: '1', label: '1', onclick:{handleHourButton} },
-            { value: '2', label: '2', onclick:{handleHourButton} },
-            { value: '3', label: '3', onclick:{handleHourButton} },
-            { value: '4', label: '4', onclick:{handleHourButton} },
-            { value: '5', label: '5', onclick:{handleHourButton} },
-            { value: '6', label: '6', onclick:{handleHourButton} },
-            { value: '7', label: '7', onclick:{handleHourButton} },
-            { value: '8', label: '8', onclick:{handleHourButton} },
-            { value: '9', label: '9', onclick:{handleHourButton} },
+            { value: '01', label: '1', onclick:{handleHourButton} },
+            { value: '02', label: '2', onclick:{handleHourButton} },
+            { value: '03', label: '3', onclick:{handleHourButton} },
+            { value: '04', label: '4', onclick:{handleHourButton} },
+            { value: '05', label: '5', onclick:{handleHourButton} },
+            { value: '06', label: '6', onclick:{handleHourButton} },
+            { value: '07', label: '7', onclick:{handleHourButton} },
+            { value: '08', label: '8', onclick:{handleHourButton} },
+            { value: '09', label: '9', onclick:{handleHourButton} },
             { value: '10', label: '10', onclick:{handleHourButton} },
             { value: '11', label: '11', onclick:{handleHourButton} },
             { value: '12', label: '12', onclick:{handleHourButton} }
           ]
     
         const [option, setOption] = useState(options[0])
-    
+        console.log(option.value)
      
         return (
             <div>

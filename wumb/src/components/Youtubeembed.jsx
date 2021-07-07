@@ -18,10 +18,6 @@ const YoutubeEmbed = ({ embedId, radioData, num }) => {
 
   const [youTubeData, setYouTubeData] = useState({})
 
-  const [ytTimeHR, setYtTimeHR] = useState('')
-  const [ytTimeMin, setYtTimeMin] = useState('')
-  const [ytArtist, setYtArtist] = useState('')
-
   
   const url = ('https://wumb-proxy-2.herokuapp.com/search-yt-api?time=1:35%20pm&artist=Karen%20Dalton&title=Something%20on%20Your%20Mind%20(from%20In%20My%20Own%20Time)&minsAfter=23&date=5-22-21&live=false&')
 
@@ -40,7 +36,7 @@ const YoutubeEmbed = ({ embedId, radioData, num }) => {
 
 }, []);
 
-console.log(youTubeData)
+
 
 
 
