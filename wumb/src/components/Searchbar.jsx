@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import Cal from "./CalContainer";
+import Cal from "../assets/Calendar";
 
-
-//contains calendar, search bar for date + time, am/pm button for time search, and Submit button
-//unsure if we will use calendar, search bar, both, or neither! 
 
 function Searchbar(props) {
   const [dateInput, setDateInput] = useState("");
@@ -13,10 +10,6 @@ function Searchbar(props) {
   const handleClick = (e) => {
     e.preventDefault();
     console.log("button working");
-  };
-
-  const handleDateSubmit = (ev) => {
-    setDateInput(ev.target.value);
   };
 
   const handleTimeSubmit = (evt) => {
@@ -32,14 +25,12 @@ function Searchbar(props) {
   return (
     <div className="searchbar-container">
       <div className="controlbar">
+
         <span id="lookupPrompt">Chose a time and date for playlist...</span>
 
-        <form className="search-date-form" 
-              onSubmit={handleDateSubmit}>
         <div className="calendar">
-        <Cal onChange={handleDateSubmit} 
-              handleDateSubmit={handleDateSubmit}/>
-        </div>
+        <Cal/>
+       </div>
         
         <input type="time"
                 label="time"
@@ -48,9 +39,7 @@ function Searchbar(props) {
         <button className="search-button" onClick={handleClick}>
           Search WUMB Playlist
         </button>
-
-
-      </form>
+        
       </div>
     </div>
   );

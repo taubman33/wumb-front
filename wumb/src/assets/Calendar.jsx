@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import CalendarReact from '../assets/CalendarReact';
+import CalendarReact from './CalendarReact';
 
 
 //this contains the calendar we'll be using to set the date, unless we want to ditch this
