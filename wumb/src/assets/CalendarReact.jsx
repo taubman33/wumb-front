@@ -9,17 +9,18 @@ import 'react-calendar/dist/Calendar.css';
 //so we are going to need to do something else to get the date, or convert this parsed data, which seems repetitive and not the best option 
 
 export default function CalendarReact() {
-    // set states of calendar date
     let newDate = new Date()
-    const [calDate, setCalDate] = useState(newDate)
+    const [calDate, setCalDate] = useState('')
+    const [cutDate, setCutDate] = useState('')
 
-    //date.parse doesn't do exactly what we want to do, so we'll need to find a better way of doing it
-    const onChange = (newDate) => {
-        setCalDate(newDate)
-        // Date.parse(calDate)
-        console.log(calDate)
+  const onChange = (newDate) => {
+        setCalDate(newDate) 
+        let dateString = calDate.toString()
+        let cutString = dateString.slice(8,10)
+        setCutDate(cutString)
     }
 
+    console.log(cutDate)
     return (
         <div className="result-calendar">
             <Calendar onChange={onChange} 

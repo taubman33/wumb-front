@@ -4,7 +4,7 @@ import Nav from './Nav'
 
 //Nothing too exciting here, but will have alternate displays in Nav if user is logged in or not. 
 //Thinking that this will be require UseContext
-function Header(isLoggedIn, setisLoggedIn) {
+function Header(isLoggedIn, setisLoggedIn, username) {
     return (
         <div className="header-container">
             <div className ="header-text">
@@ -15,7 +15,8 @@ function Header(isLoggedIn, setisLoggedIn) {
 
             <div className="nav-container">
                 <Nav isLoggedIn={isLoggedIn}
-                     setisLoggedIn={setisLoggedIn}/>
+                     setisLoggedIn={setisLoggedIn}
+                     username={username}/>
             </div>
         </div>
     );

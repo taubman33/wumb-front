@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom'
 
 //Nav bar that will display differently based on user login status
 //as discussed in previous components, this will probably need to have Context added to it eventually.
-function Nav(isLoggedIn, setisLoggedIn) {
+function Nav(isLoggedIn, setisLoggedIn, username) {
 
     const logout = () => (
         setisLoggedIn(false)
     )
-
-    let username = "UserName"
+    
     if (!isLoggedIn){
         return (
             <div className ="nav">

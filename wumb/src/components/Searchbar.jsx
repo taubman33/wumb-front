@@ -18,7 +18,7 @@ function Searchbar(props) {
     console.log(ytTime)
   };
   
-  console.log(ytTime)
+  // console.log(ytTime)
   
   
 
@@ -34,6 +34,7 @@ function Searchbar(props) {
         
         <input type="time"
                 label="time"
+                value={ytTime}
                 onChange={handleTimeSubmit}/>
 
         <button className="search-button" onClick={handleClick}>
