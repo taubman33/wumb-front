@@ -8,7 +8,7 @@ function Nav(isLoggedIn, setisLoggedIn) {
         setisLoggedIn(false)
     )
 
-    let username = "JT33"
+    let username = "UserName"
     if (!isLoggedIn){
         return (
             <div className ="nav">

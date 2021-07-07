@@ -12,7 +12,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
     //for dates too (1-9 vs 10-31)
 
     //with calendar data being passed up and down we may have to use Context for this. 
-    const [searchMonth, setSearchMonth] = useState(5)
+    const [searchMonth, setSearchMonth] = useState(10)
     const [searchDay, setSearchDay] = useState(22)
 
 
@@ -47,10 +47,6 @@ const EmbedContainer = (embedId, youtubeLink) => {
 
   }, []);
 
-
-  
-  
-  // console.log(radioData[0].time) 
 
 
   //need Youtube ID for Embed Link -> Different API call here? 
