@@ -43,7 +43,7 @@ function Searchbar(props) {
             </input>
 
             <div className ="AmPmButton-container">
-            <AmPmButton />
+           
             </div>
 
 
@@ -54,6 +54,8 @@ function Searchbar(props) {
               value={timeInput}
               onChange={handleTimeSubmit}> 
              </input>
+
+             <AmPmButton />
 
         </form>
 

@@ -18,11 +18,12 @@ function Table({radioData, num}) {
                 <th>Time</th>
                 <th>Artist</th>
                 <th>Title</th>
+                <th>ID</th>
               </tr>
           </thead>
 
       <tbody>
-  <tr className = 'row row-odd'>
+  <tr className = 'row row-odd selected'>
     <td>{radioData[num].time}</td>
     <td>{radioData[num].artist}</td>
     <td>{radioData[num].title}</td>

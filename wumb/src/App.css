@@ -36,7 +36,7 @@
 }
 
 
-.rows {
+/* .rows {
   border:1px solid black;
 }
 
@@ -47,7 +47,7 @@
 
 .row-odd {
   background-color: bisque;
-}
+} */
 
 .search-button{
   height: 25%
@@ -59,9 +59,9 @@
   justify-content: center;
 }
 
-.searchbar-container {
+/* .searchbar-container {
   background-color: rgb(7, 179, 90);
-} 
+}  */
 
 .searchbar-forms{
   display: flex;
@@ -70,9 +70,18 @@
 
 }
 
+.selected {
+  background-color: pink;
+}
+
+.table {
+  background-color: rgb(250, 237, 186);
+  border: 2px solid black
+}
+
 #header-title {
   color: rgb(7, 179, 90);
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 #logout-button {

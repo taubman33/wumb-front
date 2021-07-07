@@ -13,7 +13,7 @@ function Home(props) {
             <div className ="home-screen-container">  
              
                     <div className="home-text-container">
-                        <h2> Welcome to the WUMB Listen app! Please select a date/program to listen to on the calendar</h2>
+                        <h2> Welcome to the WUMB Listen app!</h2>
                     </div>
             
                     <div className ="player-link">
