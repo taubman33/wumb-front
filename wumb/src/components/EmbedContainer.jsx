@@ -12,8 +12,8 @@ const EmbedContainer = (embedId, youtubeLink) => {
     //for dates too (1-9 vs 10-31)
 
     //with calendar data being passed up and down we may have to use Context for this. 
-    const [searchMonth, setSearchMonth] = useState('05')
-    const [searchDay, setSearchDay] = useState('24')
+    const [searchMonth, setSearchMonth] = useState('06')
+    const [searchDay, setSearchDay] = useState('30')
 
 
 
@@ -25,7 +25,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
     
 
   useEffect(() => {
-      fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=false&d=${searchYear}0${searchMonth}${searchDay}`)
+      fetch(`https://wumb-proxy-2.herokuapp.com/parse?live=true&d=${searchYear}${searchMonth}${searchDay}`)
       .then((res) =>(res.text()))
       .then(body => {
 
