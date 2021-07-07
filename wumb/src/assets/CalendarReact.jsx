@@ -13,17 +13,22 @@ export default function CalendarReact() {
     const [calDate, setCalDate] = useState('')
     const [cutDate, setCutDate] = useState('')
 
-  const onChange = (newDate) => {
+
+
+    const findDate = () => {
         setCalDate(newDate) 
+        console.log(calDate)
         let dateString = calDate.toString()
         let cutString = dateString.slice(8,10)
         setCutDate(cutString)
     }
 
+
+
     console.log(cutDate)
     return (
         <div className="result-calendar">
-            <Calendar onChange={onChange} 
+            <Calendar onChange={findDate} 
             value={calDate}
              /> 
         </div>
