@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Cal from "./CalContainer";
-import AmPmButton from "./AmPmButton";
+import AmPmButton from "../assets/AmPmButton";
+import HourButton from "../assets/HourButton";
+import MinuteButton from "../assets/MinuteButton";
 
 //contains calendar, search bar for date + time, am/pm button for time search, and Submit button
 //unsure if we will use calendar, search bar, both, or neither! 
@@ -35,27 +37,31 @@ function Searchbar(props) {
         <div className="searchbar-forms">
           <form onSubmit="return timeForm(event)">
             <label>Date:</label>
-            <input
+            {/* <input
               type="text"
               placeholder="enter month mm/dd/yy"
               value={dateInput}
               onChange={handleDateSubmit}>
-            </input>
-
-            <div className ="AmPmButton-container">
-           
-            </div>
+            </input> */}
+            
 
 
             <label>Time:</label>
-            <input
+            {/* <input
               type="text"
               placeholder="enter time"
               value={timeInput}
               onChange={handleTimeSubmit}> 
-             </input>
+             </input> */}
 
-             <AmPmButton />
+
+              <HourButton />
+              <MinuteButton />
+      
+      
+             <div className ="AmPmButton-container">
+            <AmPmButton />
+            </div>
 
         </form>
 
