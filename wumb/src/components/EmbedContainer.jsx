@@ -49,12 +49,11 @@ const EmbedContainer = (embedId, youtubeLink) => {
 
 
 
-  //need Youtube ID for Embed Link -> Different API call here? 
+  //need Youtube ID for Embed Link -> Different API data needs to be passed here through the Table and YT components
   //Fetch to receieve Embed Link and then pass it into here stately
+
     return (
         <div className="embed-container">
-
-
 
            <div className="searchbar-container">
             <Searchbar/>

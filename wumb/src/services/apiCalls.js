@@ -1,3 +1,7 @@
+//Frontend/Views/Script.js in Listen-Wumb repo. Using as template for Video commands
+//nothing here is exported 
+
+
 /* ==== FLAG VARIABLES =======
     inserted via handlebars
     PROD_ON             - true to point scraper + search to heroku servers

@@ -1,6 +1,9 @@
 import React from 'react';
 import Nav from './Nav'
 
+
+//Nothing too exciting here, but will have alternate displays in Nav if user is logged in or not. 
+//Thinking that this will be require UseContext
 function Header(isLoggedIn, setisLoggedIn) {
     return (
         <div className="header-container">

@@ -1,7 +1,8 @@
 import React from 'react';
 
 //we have 'player' here for the player, but the embed component uses a diffeerent terminology.
-//ergo, we will have to connect the two 
+//ergo, we will have to connect the two eventually and change some wordage. 
+//But between the fetch command and the date/time setup, these are 4th or 5th in our task agenda heirarchy.
 
 function ControlBar(props) {
     var player

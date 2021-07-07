@@ -2,6 +2,11 @@ import axios from 'axios'
 import apiUrl from './apiConfig'
 import apiVersion from './apiVersion'
 
+
+//boilerplate auth code from a previous project
+//we will focus on this once the front end is working properly
+//and realstically, we will probably swap 90% of this out for something else
+
 export const api = axios.create({
     baseURL: apiUrl + apiVersion
 })
@@ -10,8 +15,8 @@ export const isBrowser = () => typeof window !== "undefined"
 
 export const getLoggedInUser = () =>
     (
-        isBrowser() && window.localStorage.getItem("NiceParkApp")
-            ? JSON.parse(window.localStorage.getItem("NiceParkApp"))
+        isBrowser() && window.localStorage.getItem("ListenWumb")
+            ? JSON.parse(window.localStorage.getItem("ListenWumb"))
             : {}
     )
 

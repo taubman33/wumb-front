@@ -1,6 +1,11 @@
 import React from 'react';
 
 
+//form to register new user. Like Login says, we don't have a defined user table in our backend
+//so this is just boilerplate code to sit now until we finish the main front end parts
+//and can begin focusing on auth/login
+
+
 export default function Register (props) {
     return (
         <div>

@@ -1,5 +1,10 @@
 import React from 'react';
 
+//hard coded table from Embed component fetch
+//goal will be to turn this into a For loop with radiodata.length as a max length
+//rendering each row a different class/color + allowing the selected song (see Will's mockup for reference)
+//but for now, it works in this dummy format
+
 
 function Table({radioData, num}) {
 

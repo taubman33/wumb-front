@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-
+//Nav bar that will display differently based on user login status
+//as discussed in previous components, this will probably need to have Context added to it eventually.
 function Nav(isLoggedIn, setisLoggedIn) {
 
     const logout = () => (
