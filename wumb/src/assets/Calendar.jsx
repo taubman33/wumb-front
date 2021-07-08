@@ -1,47 +1,33 @@
-import React, {useState, useEffect} from 'react';
-import CalendarReact from './CalendarReact';
+import React, { useState, useEffect } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 
-//this contains the calendar we'll be using to set the date, unless we want to ditch this
-//and just work with the Searchbar in that respective components
-//While I think the Calendar is the better option, it does present 2 problems ->
-//parsing the date to the format we need (see indivdual CalendarReact component for more notes)
-//and this here calendar realllly doesn't like being in Flex. So we'll see what we'll have to do to style it up
+export default function CalendarReact({setSearchYear, setSearchMonth, setSearchDay}) {
+  const [calDate, setCalDate] = useState(new Date(Date.parse("2021-06-01")));
+  const [cutDate, setCutDate] = useState(""); 
 
-function CalContainer({handleDateSubmit, setSearchYear, setSearchMonth, setSearchDay}) {
 
-    const [showModal, setShowModal] = useState(false)
-    const openCalendar = () => {
-        setShowModal(true)
-      }
+  useEffect(() => {
+    setSearchDay(calDate.getDay().toString().padStart(2,0))
+    setSearchMonth((calDate.getMonth() + 1).toString().padStart(2,0))
+    console.log("THIS IS THE MONTH",calDate.getMonth() + 1)
+    console.log("THIS IS THE DATE",calDate)
+    // setSearchMonth(calDate.getMonth().toString().padStart(2,0))
+    window.caldate = calDate;
+  }, [calDate, setSearchDay, setSearchMonth])
 
-      const closeCalendar = () => {
-        setShowModal(false)
-      }
-    
 
-      
-    if (!showModal) {
-    return (
-        <div className = "cal-container">
-
-        <button id="openModal"
-                onClick={openCalendar}>Open Calendar</button>
-        
-        </div>
-        );
-    } else {
-        return (
-            <div className = "cal-container">
-    
-            <button id="openModal"
-                    onClick={closeCalendar}>Close Calendar</button>
-                <div className="cal-start" style={{display:'block'}}>
-                    <CalendarReact onClick={handleDateSubmit} {...{setSearchYear, setSearchMonth, setSearchDay}}/>
-                </div>
-            </div>
-          );
+    const dateData = (newDate) => {
+        setCalDate(newDate)
+        console.log(calDate)
     }
-}
 
-export default CalContainer;
+    
+  console.log(cutDate);
+  return (
+    <div className="result-calendar">
+      <Calendar onChange={dateData} value={calDate} />
+    </div>
+  );
+}
