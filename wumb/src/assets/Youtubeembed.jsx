@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import ControlBar from "../assets/ControlBar";
+import ControlBar from "./ControlBar";
 
 
 //this is where things are going to get difficult
