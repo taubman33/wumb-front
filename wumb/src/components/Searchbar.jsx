@@ -1,26 +1,35 @@
 import React, { useState } from "react";
-import Calendar from "../assets/Calendar";
+import Calendar from "../assets/Calendar";    // commenting out the Calendar component in render for now
 
 
 function Searchbar({setSearchYear, setSearchMonth, setSearchDay}) {
-  const [dateInput, setDateInput] = useState("");
-  const [timeInput, setTimeInput] = useState("");
+  const [dateInput, setDateInput] = useState([]);
+  // const [timeInput, setTimeInput] = useState("");
   const [ytTime, setYtTime] = useState("")
 
-  const handleClick = (e) => {
+  const searchWUMB = (e) => {
     e.preventDefault();
-    console.log("button working");
+    setSearchYear(dateInput[0].substring(2))
+    setSearchMonth(dateInput[1])
+    setSearchDay(dateInput[2])
+    console.log("button works");
+    console.log(`ytTime: ${ytTime}`);
+    console.log(`Search Year: ${dateInput[0].substring(2)}`);
+    console.log(`Search Month: ${dateInput[1]}`);
+    console.log(`Search Day: ${dateInput[2]}`);
   };
 
-  const handleTimeSubmit = (evt) => {
+  const handleTimeClick = (evt) => {
     evt.preventDefault()
     setYtTime(evt.target.value);
-    console.log(ytTime)
   };
-  
-  // console.log(ytTime)
-  
-  
+
+  const handleDateClick = (e) => {
+    e.preventDefault()
+    const dateInput = e.target.value.split('-')
+    console.log(`dateInput: ${dateInput}`)
+    setDateInput(dateInput)
+  }
 
   return (
     <div className="searchbar-container">
@@ -28,16 +37,19 @@ function Searchbar({setSearchYear, setSearchMonth, setSearchDay}) {
 
         <span id="lookupPrompt">Chose a time and date for playlist...</span>
 
-        <div className="calendar">
+        {/* <div className="calendar">
         <Calendar {...{setSearchYear, setSearchMonth, setSearchDay}} />
-       </div>
+       </div> */}
         
+       <input type="date"
+               label="date"
+               onChange={handleDateClick}/>
         <input type="time"
                 label="time"
                 value={ytTime}
-                onChange={handleTimeSubmit}/>
+                onChange={handleTimeClick}/>
 
-        <button className="search-button" onClick={handleClick}>
+        <button className="search-button" onClick={searchWUMB}>
           Search WUMB Playlist
         </button>
         
