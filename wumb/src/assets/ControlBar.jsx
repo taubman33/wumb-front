@@ -4,7 +4,7 @@ import React from 'react';
 //ergo, we will have to connect the two eventually and change some wordage. 
 //But between the fetch command and the date/time setup, these are 4th or 5th in our task agenda heirarchy.
 
-function ControlBar(props) {
+function ControlBar() {
     var player
     var currentVidIndex = 0
 

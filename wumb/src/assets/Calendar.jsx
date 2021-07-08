@@ -9,7 +9,7 @@ export default function CalendarReact({setSearchYear, setSearchMonth, setSearchD
 
 
   useEffect(() => {
-    setSearchDay(calDate.getDay().toString().padStart(2,0))
+    setSearchDay(calDate.getDate().toString().padStart(2,0))
     setSearchMonth((calDate.getMonth() + 1).toString().padStart(2,0))
     // console.log("THIS IS THE MONTH",calDate.getMonth() + 1)
     // console.log("THIS IS THE DATE",calDate)

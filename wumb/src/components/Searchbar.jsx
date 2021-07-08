@@ -15,7 +15,7 @@ function Searchbar({setSearchYear, setSearchMonth, setSearchDay}) {
   const handleTimeSubmit = (evt) => {
     evt.preventDefault()
     setYtTime(evt.target.value);
-    console.log(ytTime)
+    console.log('searchbar', ytTime)
   };
   
   // console.log(ytTime)

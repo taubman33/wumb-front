@@ -11,12 +11,6 @@ const EmbedContainer = (embedId, youtubeLink) => {
 
     const [searchMonth, setSearchMonth] = useState('05')
     const [searchDay, setSearchDay] = useState('27')
-
-
-
-    // const [num, setNum] = useState(0)
-    const num = 0
-
     
   // fetch code + return for table.
   useEffect(() => {
@@ -56,7 +50,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
             <Searchbar setSearchYear={setSearchYear} setSearchMonth={setSearchMonth} setSearchDay={setSearchDay} />
           </div>
             <div className="youtube-player">
-            <YTE embedId={youtubeLink} radioData={radioData} num={num}/>
+            <YTE embedId={youtubeLink} radioData={radioData}/>
             </div>
 
             <div className="queue-table">
@@ -64,7 +58,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
                             searchDay={searchDay}
                             searchMonth={searchMonth}
                             searchYear={searchYear}
-                            num={num}/>
+                           />
             </div>
 
         </div>
