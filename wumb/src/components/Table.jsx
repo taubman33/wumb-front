@@ -13,11 +13,6 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
    setdisplayYear(searchYear)
    setdisplayData(radioData)
 
-
-
-console.log({searchMonth}, {searchDay}, {searchYear})
-
-
 }, [searchYear, searchMonth, searchDay, radioData]);
 
 

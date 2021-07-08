@@ -2,44 +2,36 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ControlBar from "./ControlBar";
 
+const YoutubeEmbed = ({ radioData }) => {
 
-//this is where things are going to get difficult
-//we now need to get the time and date pulled from the Calendar / Searchbar components
-//and then pass the data into the components with fetch methods to pull from the 2 api's
-//the radio one (table data) and the youtube one (video embed id data) to their respective components 
+  console.log (radioData[0].artist)
 
-//we may want to reconfigure this whole thing and use Context, and maybe even import the fetch commands from our API folder
-//since we want to use Auth/Login, useContext may already be a necessary future step. We'll see. 
-//but lets get it goings step by step first -> parsing calendar data to strings or getting text input working properly
-//so that we can pass the data into the search url and get dynamic answers + having vid + table match
-// 'next' and 'previous' buttons etc  will come after
-
-const YoutubeEmbed = ({ embedId, radioData, num }) => {
-
-  const [youTubeData, setYouTubeData] = useState({})
-
-  
-  const url = ('https://wumb-proxy-2.herokuapp.com/search-yt-api?time=1:35%20pm&artist=Karen%20Dalton&title=Something%20on%20Your%20Mind%20(from%20In%20My%20Own%20Time)&minsAfter=23&date=5-22-21&live=false&')
+  const [youTubeData, setYouTubeData] = useState(radioData)
 
 
-  //using dummy url (no variables in there yet) to find the Youtube link so that we can get
-  //the youtube embed id to put in the embedded player.
-
+  // const [ytArtist, setytArtist] = useState(radioData[0].artist)
+  // const [ytTitle, setytTitle] = useState(radioData[0].title)
   
   useEffect(() => {
+    console.log(radioData[0])
+      const artistUrl = (radioData[0].artist).replace(/ /g, '%20');
+      const titleUrl = (radioData[0].title).replace(/ /g, '%20');
+    const url = (`https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=true`)
+    console.log("THIS IS OUR URL", url)
     fetch(url)
     .then((res) =>(res.json()))
     .then(data => {
+      window.videodata = data;
+      console.log(data[0])
+      console.log(data[0].id.videoId)
       setYouTubeData(data[0].id.videoId)
+ 
   })
     .catch(console.error);
 
-}, []);
+}, [radioData]);
 
-
-// console.log('youtube data ', youTubeData)
-
-  if (youTubeData) {
+  if (radioData && youTubeData) {
     return (
 
   <div className = "embed-container">

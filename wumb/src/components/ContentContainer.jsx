@@ -22,8 +22,6 @@ const EmbedContainer = (embedId, youtubeLink) => {
         const parser = new DOMParser()
         const doc = parser.parseFromString(body, 'text/html')
         const tbs = doc.querySelector("#MainContentTextOnly").querySelectorAll("tbody")
-        
-        console.log(tbs);
         const data = Array.from(tbs).map( tb => {
             return {
                 time: tb.children[0].children[0].innerText.replaceAll("\n", ""), 
@@ -43,14 +41,26 @@ const EmbedContainer = (embedId, youtubeLink) => {
   //need Youtube ID for Embed Link -> Different API data needs to be passed here through the Table and YT components
   //Fetch to receieve Embed Link and then pass it into here stately
 
+
     return (
         <div className="embed-container">
 
            <div className="searchbar-container">
-            <Searchbar setSearchYear={setSearchYear} setSearchMonth={setSearchMonth} setSearchDay={setSearchDay} />
+            <Searchbar setSearchYear={setSearchYear}
+                       setSearchMonth={setSearchMonth} 
+                       setSearchDay={setSearchDay} />
           </div>
+
+
             <div className="youtube-player">
-            <YTE embedId={youtubeLink} radioData={radioData}/>
+
+
+          {radioData ?  <YTE embedId={youtubeLink} 
+                radioData={radioData}
+                searchDay={searchDay}
+                searchMonth={searchMonth}
+                searchYear={searchYear}/>
+            : null}
             </div>
 
             <div className="queue-table">
