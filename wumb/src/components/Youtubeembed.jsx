@@ -37,7 +37,9 @@ const YoutubeEmbed = ({ embedId, radioData, num }) => {
 }, []);
 
 
-  if (radioData && youTubeData && radioData[num]) {
+// console.log('youtube data ', youTubeData)
+
+  if (youTubeData) {
     return (
 
   <div className = "embed-container">
@@ -62,7 +64,7 @@ const YoutubeEmbed = ({ embedId, radioData, num }) => {
 }
 else {
   return (
-    <div> Loading, please wait </div>
+    <div> Loading, please wait!!</div>
   )
 }
 }

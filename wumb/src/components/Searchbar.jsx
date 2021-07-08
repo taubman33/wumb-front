@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Calendar from "../assets/Calendar";
+import CalendarContainer from "../assets/CalendarContainer";
 
 
 function Searchbar({setSearchYear, setSearchMonth, setSearchDay}) {
@@ -29,7 +29,7 @@ function Searchbar({setSearchYear, setSearchMonth, setSearchDay}) {
         <span id="lookupPrompt">Chose a time and date for playlist...</span>
 
         <div className="calendar">
-        <Calendar {...{setSearchYear, setSearchMonth, setSearchDay}} />
+        <CalendarContainer {...{setSearchYear, setSearchMonth, setSearchDay}} />
        </div>
         
         <input type="time"
