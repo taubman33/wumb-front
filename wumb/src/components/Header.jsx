@@ -13,11 +13,11 @@ function Header(isLoggedIn, setisLoggedIn, username) {
             
 
 
-            <div className="nav-container">
+            {/* <div className="nav-container">
                 <Nav isLoggedIn={isLoggedIn}
                      setisLoggedIn={setisLoggedIn}
                      username={username}/>
-            </div>
+            </div> */}
         </div>
     );
 }

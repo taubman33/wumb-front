@@ -11,20 +11,14 @@ export default function CalendarReact({setSearchYear, setSearchMonth, setSearchD
   useEffect(() => {
     setSearchDay(calDate.getDate().toString().padStart(2,0))
     setSearchMonth((calDate.getMonth() + 1).toString().padStart(2,0))
-    // console.log("THIS IS THE MONTH",calDate.getMonth() + 1)
-    // console.log("THIS IS THE DATE",calDate)
-    // setSearchMonth(calDate.getMonth().toString().padStart(2,0))
     window.caldate = calDate;
   }, [calDate, setSearchDay, setSearchMonth])
 
 
     const dateData = (newDate) => {
         setCalDate(newDate)
-        console.log(calDate)
     }
-
     
-  // console.log(cutDate);
   return (
     <div className="result-calendar">
       <Calendar onChange={dateData} value={calDate} />

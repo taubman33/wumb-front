@@ -20,6 +20,7 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
 
   if (radioData.length && searchDay && searchMonth) {
     return ( 
+      <div className="table-container">
       <div className="table">
         <h2> {searchMonth}/{searchDay}/20{searchYear}</h2>
          <table>
@@ -79,6 +80,8 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
 
         </table>
       </div>
+      </div>
+    
     );
   } 
   else {

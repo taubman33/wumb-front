@@ -13,17 +13,15 @@ const YoutubeEmbed = ({ radioData }) => {
   // const [ytTitle, setytTitle] = useState(radioData[0].title)
   
   useEffect(() => {
-    console.log(radioData[0])
-      const artistUrl = (radioData[0].artist).replace(/ /g, '%20');
-      const titleUrl = (radioData[0].title).replace(/ /g, '%20');
+
+    const artistUrl = (radioData[0].artist).replace(/ /g, '%20');
+    const titleUrl = (radioData[0].title).replace(/ /g, '%20');
     const url = (`https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=true`)
-    console.log("THIS IS OUR URL", url)
+   
     fetch(url)
     .then((res) =>(res.json()))
     .then(data => {
       window.videodata = data;
-      console.log(data[0])
-      console.log(data[0].id.videoId)
       setYouTubeData(data[0].id.videoId)
  
   })
@@ -40,6 +38,7 @@ const YoutubeEmbed = ({ radioData }) => {
       <ControlBar/>
       </div>  
 
+<div className ="video-container">
         <div className="video-responsive">
           <iframe
             src={`https://www.youtube.com/embed/${youTubeData}`}
@@ -49,7 +48,7 @@ const YoutubeEmbed = ({ radioData }) => {
             title="Embedded youtube"
           />
         </div>
-
+        </div>
   </div> 
 
 );

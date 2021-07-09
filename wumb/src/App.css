@@ -2,6 +2,15 @@
   width: 17%;
 }
 
+body {
+background-image: url('https://assets.hongkiat.com/uploads/wood-textures/brown-wood.jpg');
+}
+
+.App {
+  height:100%;
+  text-align: center;
+
+}
 
 .cal-start {
   display: block;
@@ -9,10 +18,11 @@
 
 
 .header-container {
-  background-color:rgb(142, 69, 6) ;
-  display: flex; 
-  flex-direction: row;
-  justify-content: space-between;
+  background-color:rgb(94, 39, 2) ;
+  height: 5rem;
+ display: flex;
+ flex-direction: column;
+
 }
 
 
@@ -36,18 +46,10 @@
 }
 
 
-/* .rows {
+.rows {
   border:1px solid black;
 }
 
-.row-even {
-  background-color: aqua;
-}
-
-
-.row-odd {
-  background-color: bisque;
-} */
 
 .search-button{
   height: 25%
@@ -76,12 +78,18 @@
 
 .table {
   background-color: rgb(250, 237, 186);
-  border: 2px solid black
+  border: 10px solid black;
+  height: 50%;
+  border-radius: 25%;
 }
 
 #header-title {
-  color: rgb(7, 179, 90);
-  font-size: 1.5rem;
+  font-family: 'Zen Tokyo Zoo', cursive;
+  font-weight: 300;
+  letter-spacing: 1rem;
+  /* color: rgb(7, 179, 90); */
+  color: white;
+  font-size: 2rem;
 }
 
 #logout-button {
@@ -92,6 +100,21 @@
 #nav-link {
   color: white;
   font-size: .5rem;
+}
+
+
+.table-container {
+
+  display:flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+.video-responsive {
+  margin: auto;
+  width: 20%;
+  border: 2rem solid rgb(50, 48, 48);
+  border-radius: 15%;
 }
 
 
