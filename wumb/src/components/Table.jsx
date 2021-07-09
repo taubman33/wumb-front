@@ -1,33 +1,52 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-//hard coded table from Embed component fetch
-//goal will be to turn this into a For loop with radiodata.length as a max length
-//rendering each row a different class/color + allowing the selected song (see Will's mockup for reference)
-//but for now, it works in this dummy format
+function Table({ radioData, searchDay, searchMonth, searchYear }) {
 
-function Table({ radioData, num, searchDay, searchMonth, searchYear }) {
-  if (radioData) {
-    return (
+  const [displayDay, setdisplayDay] = useState('')
+  const [displayMonth, setdisplayMonth] = useState('')
+  const [displayYear, setdisplayYear] = useState('')
+  const [displayData, setdisplayData] = useState('')
+
+  useEffect(() => {
+   setdisplayDay(searchDay)
+   setdisplayMonth(searchMonth)
+   setdisplayYear(searchYear)
+   setdisplayData(radioData)
+
+}, [searchYear, searchMonth, searchDay, radioData]);
+
+
+
+
+  if (radioData.length && searchDay && searchMonth) {
+    return ( 
+      <div className="table-container">
       <div className="table">
-        <h2>{searchMonth} / {searchDay} / {searchYear}</h2>
-        <table>
+        <h2> {searchMonth}/{searchDay}/20{searchYear}</h2>
+         <table>
           <thead>
+
             <tr className="table-header">
               <th>Time</th>
               <th>Artist</th>
               <th>Title</th>
               <th>ID</th>
             </tr>
+
           </thead>
 
           <tbody>
+
+
             <tr className="row row-odd selected">
-              <td>{radioData[num].time}</td>
-              <td>{radioData[num].artist}</td>
-              <td>{radioData[num].title}</td>
+              <td>{radioData[0].time}</td>
+              <td>{radioData[0].artist}</td>
+              <td>{radioData[0].title}</td>
               <td>null</td>
             </tr>
-            <tr className="row row-even">
+
+
+           <tr className="row row-even">
               <td>{radioData[1].time}</td>
               <td>{radioData[1].artist}</td>
               <td>{radioData[1].title}</td>
@@ -56,13 +75,17 @@ function Table({ radioData, num, searchDay, searchMonth, searchYear }) {
               <td>{radioData[5].artist}</td>
               <td>{radioData[5].title}</td>
               <td>null</td>
-            </tr>
+            </tr> 
           </tbody>
+
         </table>
       </div>
+      </div>
+    
     );
-  } else {
-    return <div>Loading, Please Wait!</div>;
+  } 
+  else {
+    return <div>Loading, Please Wait!!</div>;
   }
 }
 

@@ -1,5 +1,8 @@
+
 import React, { useState } from "react";
 import Calendar from "../assets/Calendar"; // commenting out the Calendar component in render for now
+
+
 
 function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
   const [dateInput, setDateInput] = useState([]);
@@ -21,6 +24,7 @@ function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
   const handleTimeClick = (evt) => {
     evt.preventDefault();
     setYtTime(evt.target.value);
+
   };
 
   const handleDateClick = (e) => {
@@ -34,6 +38,7 @@ function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
     <div className="searchbar-container">
       <div className="controlbar">
         <span id="lookupPrompt">Chose a time and date for playlist...</span>
+
 
         {/* <div className="calendar">
         <Calendar {...{setSearchYear, setSearchMonth, setSearchDay}} />
@@ -50,6 +55,7 @@ function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
         <button className="search-button" onClick={searchWUMB}>
           Search WUMB Playlist
         </button>
+
       </div>
     </div>
   );
