@@ -9,6 +9,11 @@ function Searchbar({setSearchYear, setSearchMonth, setSearchDay}) {
   const [hourTime, setHourTime] = useState("")
   const [ytTime, setYtTime] = useState("")
 
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   console.log("button working");
+  // };
+
 
   const searchWUMB = (e) => {
     e.preventDefault();
@@ -66,6 +71,8 @@ useEffect(() => {
     <div className="searchbar-container">
       <div className="controlbar">
 
+        <span id="lookupPrompt">Chose a time and date for playlist...</span>
+
         <div className="calendar">
         <CalendarContainer {...{setSearchYear, setSearchMonth, setSearchDay}} />
        </div>
@@ -75,18 +82,15 @@ useEffect(() => {
                 value={ytTime}
                 onChange={handleTimeSubmit}/>
 
-         <input type="date"
+<input type="date"
                label="date" 
-               setSearchDay={{setSearchDay}}
-               setSearchMonth={{setSearchMonth}}
-               setSearchYear={{setSearchYear}}
                onChange={handleDateClick} />
 
 
 
-        {/* <button className="search-button" onClick={searchWUMB}>
+        <button className="search-button" onClick={searchWUMB}>
           Search WUMB Playlist
-        </button> */}
+        </button>
         
       </div>
     </div>

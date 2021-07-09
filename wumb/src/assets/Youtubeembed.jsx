@@ -34,20 +34,21 @@ const YoutubeEmbed = ({ radioData }) => {
 
   <div className = "embed-container">
 
-       <div className="control-bar-container">
-      <ControlBar/>
-      </div>  
+      
 
 <div className ="video-container">
         <div className="video-responsive">
           <iframe
             src={`https://www.youtube.com/embed/${youTubeData}`}
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title="Embedded youtube"
           />
         </div>
+
+        <div className="control-bar-container">
+      <ControlBar/>
+      </div> 
         </div>
   </div> 
 

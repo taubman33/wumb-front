@@ -44,7 +44,7 @@ const EmbedContainer = (embedId, youtubeLink) => {
 
     return (
         <div className="embed-container">
-
+<span id="lookupPrompt">Chose a time and date for playlist...</span>
            <div className="searchbar-container">
             <Searchbar setSearchYear={setSearchYear}
                        setSearchMonth={setSearchMonth} 
