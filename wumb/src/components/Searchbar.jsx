@@ -77,16 +77,13 @@ useEffect(() => {
 
          <input type="date"
                label="date" 
-               setSearchDay={{setSearchDay}}
-               setSearchMonth={{setSearchMonth}}
-               setSearchYear={{setSearchYear}}
                onChange={handleDateClick} />
 
 
 
-        {/* <button className="search-button" onClick={searchWUMB}>
+        <button className="search-button" onClick={searchWUMB}>
           Search WUMB Playlist
-        </button> */}
+        </button>
         
       </div>
     </div>
