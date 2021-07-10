@@ -9,9 +9,17 @@ const EmbedContainer = () => {
 
   const [searchMonth, setSearchMonth] = useState("05");
   const [searchDay, setSearchDay] = useState("27");
+  const [num0, setNum0] = useState(0)
+  const [num1, setNum1] = useState(1)
+  const [num2, setNum2] = useState(2)
+  const [num3, setNum3] = useState(3)
+  const [num4, setNum4] = useState(4)
+  const [num5, setNum5] = useState(5)
+  const [num6, setNum6] = useState(6)
+  const [num7, setNum7] = useState(7)
+  const [num8, setNum8] = useState(8)
+  const [num9, setNum9] = useState(9)
 
-  const [searchHour, setSearchHour] = useState("05");
-  const [searchMinute, setSearchMinute] = useState("05");
 
   // fetch code + return for table.
   useEffect(() => {
@@ -39,7 +47,6 @@ const EmbedContainer = () => {
 
   return (
     <div className="embed-container">
-      <span id="lookupPrompt">Chose a time and date for playlist...</span>
       <div className="searchbar-container">
         <Searchbar
           setSearchYear={setSearchYear}
@@ -52,9 +59,7 @@ const EmbedContainer = () => {
         {radioData ? (
           <YTE
             radioData={radioData}
-            searchDay={searchDay}
-            searchMonth={searchMonth}
-            searchYear={searchYear}
+            num0={num0}
           />
         ) : null}
       </div>
@@ -65,6 +70,7 @@ const EmbedContainer = () => {
           searchDay={searchDay}
           searchMonth={searchMonth}
           searchYear={searchYear}
+          num0={num0}
         />
       </div>
     </div>

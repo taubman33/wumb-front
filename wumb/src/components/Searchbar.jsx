@@ -14,12 +14,7 @@ function Searchbar({setSearchYear, setSearchMonth, setSearchDay}) {
     e.preventDefault();
     setSearchYear(dateInput[0].substring(2));
     setSearchMonth(dateInput[1]);
-    setSearchDay(dateInput[2]);
-    console.log("button works");
-    console.log(`ytTime: ${ytTime}`);
-    console.log(`Search Year: ${dateInput[0].substring(2)}`);
-    console.log(`Search Month: ${dateInput[1]}`);
-    console.log(`Search Day: ${dateInput[2]}`);
+    setSearchDay(dateInput[2]);;
   };
 
 
@@ -30,34 +25,34 @@ function Searchbar({setSearchYear, setSearchMonth, setSearchDay}) {
     setDateInput(dateInput);
   };
 
-  const handleTimeClick = (evt) => {
-    evt.preventDefault();
-    setYtTime(evt.target.value);
+  // const handleTimeClick = (evt) => {
+  //   evt.preventDefault();
+  //   setYtTime(evt.target.value);
 
-  };
-  const handleTimeSubmit = (evt) => {
-    evt.preventDefault()
-    setYtTime(evt.target.value);
-    console.log('searchbar', ytTime)
-  };
+  // };
+  // const handleTimeSubmit = (evt) => {
+  //   evt.preventDefault()
+  //   setYtTime(evt.target.value);
+  //   console.log('searchbar', ytTime)
+  // };
   
-  console.log(ytTime)
-  console.log(ytTime.slice(3, 5))
-  console.log(ytTime.slice(0, 2) )
+  // console.log(ytTime)
+  // console.log(ytTime.slice(3, 5))
+  // console.log(ytTime.slice(0, 2) )
 
 
-useEffect(() => {
+// useEffect(() => {
 
-  const handleTimeSubmit = (evt) => {
-    evt.preventDefault()
-    setYtTime(evt.target.value);
-    console.log('searchbar', ytTime)
-  };
+//   const handleTimeSubmit = (evt) => {
+//     evt.preventDefault()
+//     setYtTime(evt.target.value);
+//     console.log('searchbar', ytTime)
+//   };
 
-  setMinuteTime(ytTime.slice(3, 5))
-  setHourTime(ytTime.slice(0, 2))
-  console.log(hourTime, minuteTime)
-}, [hourTime, minuteTime])
+//   setMinuteTime(ytTime.slice(3, 5))
+//   setHourTime(ytTime.slice(0, 2))
+//   console.log(hourTime, minuteTime)
+// }, [hourTime, minuteTime])
 
   
   
@@ -70,21 +65,22 @@ useEffect(() => {
         <CalendarContainer {...{setSearchYear, setSearchMonth, setSearchDay}} />
        </div>
         
-        <input type="time"
+         {/* <input type="time"
                 label="time"
                 value={ytTime}
-                onChange={handleTimeSubmit}/>
+                onChange={handleTimeSubmit}/> 
+              
 
          <input type="date"
                label="date" 
-               onChange={handleDateClick} />
+               onChange={handleDateClick} /> */}
 
 
 
-        <button className="search-button" onClick={searchWUMB}>
+        {/* <button className="search-button" onClick={searchWUMB}>
           Search WUMB Playlist
         </button>
-        
+         */}
       </div>
     </div>
   );

@@ -7,11 +7,6 @@ iframe {
     border-radius: 10%;
   }
 
-.AmPmDropdown {
-  width: 17%;
-}
-
-
 
 .App {
   height:100%;
@@ -19,16 +14,19 @@ iframe {
 
 }
 
+.cal-button {
+  margin: 1rem;
+  background-color: rgb(7, 179, 90);
+  padding: 1rem;
+  border: 1 px solid white;
+  border-radius: 7%;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
 .cal-start {
   display: block;
 }
 
-
-/* .control-bar-container {
-  background-color: black;
-  padding: 2%;
-  width: 30%
-} */
 
 .header-container {
   background-color:rgb(94, 39, 2) ;
@@ -103,6 +101,7 @@ border-bottom: 2px solid white;
   border: 10px solid black;
   height: 50%;
   border-radius: 25%;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 
@@ -115,7 +114,7 @@ border-bottom: 2px solid white;
   letter-spacing: 1.5rem;
   color: rgb(7, 179, 90);
   text-shadow: 1px 1px 2px black, 0 0 25px pink, 0 0 5px greenyellow;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 #logout-button {

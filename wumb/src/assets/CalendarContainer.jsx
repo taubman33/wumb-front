@@ -21,6 +21,7 @@ function CalContainer({handleDateSubmit, setSearchYear, setSearchMonth, setSearc
         <div className = "cal-container">
 
         <button id="openModal"
+        className="cal-button"
                 onClick={openCalendar}>Open Calendar</button>
         
         </div>

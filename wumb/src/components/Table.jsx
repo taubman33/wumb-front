@@ -42,12 +42,31 @@ const nextBatch = () => {
       console.log('second', num0, num1, num2)
 }
 
+const prevBatch = () => {
+  if (num0 < 10) {
+    alert('Too far, go to next day!')
+  } else {
+  console.log('first', num0, num1, num2)
+  setNum0(num0 - 10)
+  setNum1(num1 - 10)
+  setNum2(num2 - 10)
+  setNum3(num3 - 10)
+  setNum4(num4 - 10)
+  setNum5(num5 - 10)
+  setNum6(num6 - 10)
+  setNum7(num7 - 10)
+  setNum8(num8 - 10)
+  setNum9(num9 - 10)
+  console.log('second', num0, num1, num2)
+  }
+}
+
 
   if (radioData.length && searchDay && searchMonth) {
     return ( 
       <div className="table-container">
       <div className="table">
-        <h2> Viewing {searchMonth}/{searchDay}/20{searchYear}</h2>
+        <h2>  {searchMonth}/{searchDay}/20{searchYear}, {radioData[num9].time} - {radioData[num0].time} </h2>
          <table>
           <thead>
 
@@ -133,8 +152,16 @@ const nextBatch = () => {
         </table>
 
         <button onClick = {nextBatch}
+                 class='menu-button'
                 id="next-button">
-                  Click for next batch of songs!
+                  Click for earlier batch of songs!
+                </button>
+
+
+                <button onClick = {prevBatch}
+                className='menu-button'
+                id="prev-button">
+                  Click for later batch of songs!
                 </button>
 
       </div>

@@ -2,20 +2,20 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ControlBar from "./ControlBar";
 
-const YoutubeEmbed = ({ radioData }) => {
+const YoutubeEmbed = ({ radioData, num0 }) => {
 
-  console.log (radioData[0].artist)
+  console.log ('num 0', {num0})
 
   const [youTubeData, setYouTubeData] = useState(radioData)
+  const [displayNum, setdisplayNum] = useState(num0)
 
 
   // const [ytArtist, setytArtist] = useState(radioData[0].artist)
   // const [ytTitle, setytTitle] = useState(radioData[0].title)
   
   useEffect(() => {
-
-    const artistUrl = (radioData[0].artist).replace(/ /g, '%20');
-    const titleUrl = (radioData[0].title).replace(/ /g, '%20');
+    const artistUrl = (radioData[displayNum].artist).replace(/ /g, '%20');
+    const titleUrl = (radioData[displayNum].title).replace(/ /g, '%20');
     const url = (`https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=true`)
    
     fetch(url)
@@ -42,14 +42,11 @@ const YoutubeEmbed = ({ radioData }) => {
             src={`https://www.youtube.com/embed/${youTubeData}`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            controls="0"
             title="Embedded youtube"
           />
         </div>
-
-        <div className="control-bar-container">
-      <ControlBar/>
-      </div> 
-        </div>
+      </div>
   </div> 
 
 );
