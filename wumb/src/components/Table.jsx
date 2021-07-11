@@ -66,17 +66,17 @@ const prevBatch = () => {
     return ( 
       <div className="table-container">
       <div className="table">
-        <h2>  {searchMonth}/{searchDay}/20{searchYear}, {radioData[num9].time} - {radioData[num0].time} </h2>
-         <table>
-          <thead>
 
+        <h2>  {searchMonth}/{searchDay}/20{searchYear}, {radioData[num9].time} - {radioData[num0].time} </h2>
+       
+         <table>
+         
+          <thead>
             <tr className="table-header">
               <th>Time</th>
               <th>Artist</th>
               <th>Title</th>
-              <th>ID</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -86,71 +86,68 @@ const prevBatch = () => {
               <td>{radioData[num0].time}</td>
               <td>{radioData[num0].artist}</td>
               <td>{radioData[num0].title}</td>
-              <td>null</td>
             </tr>
 
            <tr className="row">
               <td>{radioData[num1].time}</td>
               <td>{radioData[num1].artist}</td>
               <td>{radioData[num1].title}</td>
-              <td>null</td>
             </tr>
+
             <tr className="row">
               <td>{radioData[num2].time}</td>
               <td>{radioData[num2].artist}</td>
               <td>{radioData[num2].title}</td>
-              <td>null</td>
             </tr>
 
             <tr className="row">
               <td>{radioData[num3].time}</td>
               <td>{radioData[num3].artist}t</td>
               <td>{radioData[num3].title}</td>
-              <td>null</td>
             </tr>
+
             <tr className="row">
               <td>{radioData[num4].time}</td>
               <td>{radioData[num4].artist}</td>
               <td>{radioData[num4].title}</td>
-              <td>null</td>
             </tr> 
+
             <tr className="row">
               <td>{radioData[num5].time}</td>
               <td>{radioData[num5].artist}</td>
               <td>{radioData[num5].title}</td>
-              <td>null</td>
+    
             </tr> 
+            
             <tr className="row">
               <td>{radioData[num6].time}</td>
               <td>{radioData[num6].artist}</td>
               <td>{radioData[num6].title}</td>
-              <td>null</td>
             </tr> 
+
             <tr className="row">
               <td>{radioData[num7].time}</td>
               <td>{radioData[num7].artist}</td>
               <td>{radioData[num7].title}</td>
-              <td>null</td>
             </tr> 
+
             <tr className="row">
               <td>{radioData[num8].time}</td>
               <td>{radioData[num8].artist}</td>
               <td>{radioData[num8].title}</td>
-              <td>null</td>
             </tr> 
+
             <tr className="row">
               <td>{radioData[num9].time}</td>
               <td>{radioData[num9].artist}</td>
               <td>{radioData[num9].title}</td>
-              <td>null</td>
             </tr> 
-
-         
          
           </tbody>
 
         </table>
 
+       <div className="buttons"> 
         <button onClick = {nextBatch}
                  class='menu-button'
                 id="next-button">
@@ -158,12 +155,12 @@ const prevBatch = () => {
                 </button>
 
 
-                <button onClick = {prevBatch}
+        <button onClick = {prevBatch}
                 className='menu-button'
                 id="prev-button">
                   Click for later batch of songs!
                 </button>
-
+       </div>
       </div>
       </div>
     

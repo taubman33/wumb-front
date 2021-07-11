@@ -7,18 +7,10 @@ const EmbedContainer = () => {
   const [radioData, setRadioData] = useState("");
   const [searchYear, setSearchYear] = useState("21");
 
-  const [searchMonth, setSearchMonth] = useState("05");
-  const [searchDay, setSearchDay] = useState("27");
+  const [searchMonth, setSearchMonth] = useState("07");
+  const [searchDay, setSearchDay] = useState("11");
   const [num0, setNum0] = useState(0)
-  const [num1, setNum1] = useState(1)
-  const [num2, setNum2] = useState(2)
-  const [num3, setNum3] = useState(3)
-  const [num4, setNum4] = useState(4)
-  const [num5, setNum5] = useState(5)
-  const [num6, setNum6] = useState(6)
-  const [num7, setNum7] = useState(7)
-  const [num8, setNum8] = useState(8)
-  const [num9, setNum9] = useState(9)
+
 
 
   // fetch code + return for table.
@@ -45,6 +37,12 @@ const EmbedContainer = () => {
       .catch(console.error);
   }, [searchYear, searchMonth, searchDay]);
 
+
+
+  const nextVid = () => {
+    setNum0(num0++)
+  }
+
   return (
     <div className="embed-container">
       <div className="searchbar-container">
@@ -57,10 +55,12 @@ const EmbedContainer = () => {
 
       <div className="youtube-player">
         {radioData ? (
+          <div> 
           <YTE
-            radioData={radioData}
-            num0={num0}
-          />
+            radioData={radioData} />
+          </div>
+
+
         ) : null}
       </div>
 
