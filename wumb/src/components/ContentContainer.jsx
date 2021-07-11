@@ -8,8 +8,8 @@ const EmbedContainer = () => {
   const [searchYear, setSearchYear] = useState("21");
 
   const [searchMonth, setSearchMonth] = useState("07");
-  const [searchDay, setSearchDay] = useState("11");
-  const [num0, setNum0] = useState(0)
+  const [searchDay, setSearchDay] = useState("10");
+
 
 
 
@@ -38,11 +38,6 @@ const EmbedContainer = () => {
   }, [searchYear, searchMonth, searchDay]);
 
 
-
-  const nextVid = () => {
-    setNum0(num0++)
-  }
-
   return (
     <div className="embed-container">
       <div className="searchbar-container">
@@ -57,10 +52,11 @@ const EmbedContainer = () => {
         {radioData ? (
           <div> 
           <YTE
-            radioData={radioData} />
+            radioData={radioData}
+           />
           </div>
-
-
+          
+          
         ) : null}
       </div>
 
@@ -70,7 +66,6 @@ const EmbedContainer = () => {
           searchDay={searchDay}
           searchMonth={searchMonth}
           searchYear={searchYear}
-          num0={num0}
         />
       </div>
     </div>

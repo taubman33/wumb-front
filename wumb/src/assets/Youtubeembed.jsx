@@ -2,23 +2,21 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import ControlBar from "./ControlBar";
 
-const YoutubeEmbed = ({ radioData }) => {
+const YoutubeEmbed = ({ radioData, i }) => {
 
   const [youTubeData, setYouTubeData] = useState(radioData)
   const [displayNum, setdisplayNum] = useState(0)
 
-  
-
   // const [ytArtist, setytArtist] = useState(radioData[0].artist)
   // const [ytTitle, setytTitle] = useState(radioData[0].title)
 
-
-  useEffect(() => {
+  useEffect((i) => {
   
     const artistUrl = (radioData[displayNum].artist).replace(/ /g, '%20');
     const titleUrl = (radioData[displayNum].title).replace(/ /g, '%20');
     const url = (`https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=true`)
     
+    console.log(displayNum)
     fetch(url)
     .then((res) =>(res.json()))
     .then(data => {
@@ -26,7 +24,15 @@ const YoutubeEmbed = ({ radioData }) => {
       setYouTubeData(data[0].id.videoId) 
   })
     .catch(console.error);
-}, [radioData]);
+}, [radioData, displayNum]);
+
+const nextVid = () => {
+  setdisplayNum(displayNum+1)
+  console.log(displayNum)
+}
+
+console.log(displayNum)
+
 
   if (radioData && youTubeData) {
     console.log('display num third', displayNum)
@@ -46,6 +52,8 @@ const YoutubeEmbed = ({ radioData }) => {
             title="Embedded youtube"
           />
         </div>
+
+        <button onClick={nextVid}>Next Video!</button>
 
       </div>
 
