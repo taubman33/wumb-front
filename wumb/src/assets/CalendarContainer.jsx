@@ -32,7 +32,7 @@ function CalContainer({handleDateSubmit, setSearchYear, setSearchMonth, setSearc
     
             <button id="openModal"
                     onClick={closeCalendar}>Close Calendar</button>
-                <div className="cal-start" style={{display:'block'}}>
+                <div className="cal-start">
                     <Calendar onClick={handleDateSubmit} {...{setSearchYear, setSearchMonth, setSearchDay}}/>
                 </div>
             </div>

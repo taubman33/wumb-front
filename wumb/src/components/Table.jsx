@@ -82,63 +82,63 @@ const prevBatch = () => {
           <tbody>
 
 
-            <tr className="row row-odd selected">
+            <tr className="row selected">
               <td>{radioData[num0].time}</td>
               <td>{radioData[num0].artist}</td>
               <td>{radioData[num0].title}</td>
               <td>null</td>
             </tr>
 
-           <tr className="row row-even">
+           <tr className="row">
               <td>{radioData[num1].time}</td>
               <td>{radioData[num1].artist}</td>
               <td>{radioData[num1].title}</td>
               <td>null</td>
             </tr>
-            <tr className="row row-odd">
+            <tr className="row">
               <td>{radioData[num2].time}</td>
               <td>{radioData[num2].artist}</td>
               <td>{radioData[num2].title}</td>
               <td>null</td>
             </tr>
 
-            <tr className="row row-even">
+            <tr className="row">
               <td>{radioData[num3].time}</td>
               <td>{radioData[num3].artist}t</td>
               <td>{radioData[num3].title}</td>
               <td>null</td>
             </tr>
-            <tr className="row row-odd">
+            <tr className="row">
               <td>{radioData[num4].time}</td>
               <td>{radioData[num4].artist}</td>
               <td>{radioData[num4].title}</td>
               <td>null</td>
             </tr> 
-            <tr className="row row-odd">
+            <tr className="row">
               <td>{radioData[num5].time}</td>
               <td>{radioData[num5].artist}</td>
               <td>{radioData[num5].title}</td>
               <td>null</td>
             </tr> 
-            <tr className="row row-odd">
+            <tr className="row">
               <td>{radioData[num6].time}</td>
               <td>{radioData[num6].artist}</td>
               <td>{radioData[num6].title}</td>
               <td>null</td>
             </tr> 
-            <tr className="row row-odd">
+            <tr className="row">
               <td>{radioData[num7].time}</td>
               <td>{radioData[num7].artist}</td>
               <td>{radioData[num7].title}</td>
               <td>null</td>
             </tr> 
-            <tr className="row row-odd">
+            <tr className="row">
               <td>{radioData[num8].time}</td>
               <td>{radioData[num8].artist}</td>
               <td>{radioData[num8].title}</td>
               <td>null</td>
             </tr> 
-            <tr className="row row-odd">
+            <tr className="row">
               <td>{radioData[num9].time}</td>
               <td>{radioData[num9].artist}</td>
               <td>{radioData[num9].title}</td>

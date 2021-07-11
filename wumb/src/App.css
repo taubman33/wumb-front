@@ -22,9 +22,9 @@ iframe {
   border-radius: 7%;
   font-family: 'IBM Plex Mono', monospace;
 }
-
 .cal-start {
   display: block;
+
 }
 
 
@@ -37,9 +37,18 @@ iframe {
 border-bottom: 2px solid white;
 }
 
-
 .header-text {
  padding-top: -1.5rem; 
+}
+
+.home-screen-container{
+  margin-top:3rem;
+  background-color: rgb(250, 237, 186);
+  padding-top: 1%;
+  padding-bottom: 3%;
+  border: 10px solid black;
+  border-radius: 25%;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .nav {
@@ -61,10 +70,6 @@ border-bottom: 2px solid white;
   width: 30%;
 }
 
-
-.rows {
-  border:1px solid black;
-}
 
 
 .search-button{
