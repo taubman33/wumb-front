@@ -6,12 +6,8 @@ import Searchbar from "./Searchbar";
 const EmbedContainer = () => {
   const [radioData, setRadioData] = useState("");
   const [searchYear, setSearchYear] = useState("21");
-
   const [searchMonth, setSearchMonth] = useState("07");
   const [searchDay, setSearchDay] = useState("10");
-
-
-
 
   // fetch code + return for table.
   useEffect(() => {
@@ -37,7 +33,6 @@ const EmbedContainer = () => {
       .catch(console.error);
   }, [searchYear, searchMonth, searchDay]);
 
-
   return (
     <div className="embed-container">
       <div className="searchbar-container">
@@ -50,13 +45,9 @@ const EmbedContainer = () => {
 
       <div className="youtube-player">
         {radioData ? (
-          <div> 
-          <YTE
-            radioData={radioData}
-           />
+          <div>
+            <YTE radioData={radioData} />
           </div>
-          
-          
         ) : null}
       </div>
 
