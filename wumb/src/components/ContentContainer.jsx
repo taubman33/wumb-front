@@ -4,14 +4,17 @@ import Table from "./Table";
 import Searchbar from "./Searchbar";
 
 const EmbedContainer = () => {
+  
+  const today = new Date()              // creates todays date
+    .toLocaleDateString()               // converts to string in (month/date/year) format
+    .split("/")                         // converts to array with 3 items [month,date,year]
+    .map((i) => (i = "0" + i))          // adds an extra zero for single digit dates (i.e. may 6th)
+    .map((i) => i.slice(-2));           // returns array with with items [mm, dd, yy]
+  
   const [radioData, setRadioData] = useState("");
-  const [searchYear, setSearchYear] = useState("21");
-
-  const [searchMonth, setSearchMonth] = useState("07");
-  const [searchDay, setSearchDay] = useState("10");
-
-
-
+  const [searchYear, setSearchYear] = useState(today[2]);
+  const [searchMonth, setSearchMonth] = useState(today[0]);
+  const [searchDay, setSearchDay] = useState(today[1]);
 
   // fetch code + return for table.
   useEffect(() => {
@@ -37,7 +40,6 @@ const EmbedContainer = () => {
       .catch(console.error);
   }, [searchYear, searchMonth, searchDay]);
 
-
   return (
     <div className="embed-container">
       <div className="searchbar-container">
@@ -50,13 +52,9 @@ const EmbedContainer = () => {
 
       <div className="youtube-player">
         {radioData ? (
-          <div> 
-          <YTE
-            radioData={radioData}
-           />
+          <div>
+            <YTE radioData={radioData} />
           </div>
-          
-          
         ) : null}
       </div>
 
