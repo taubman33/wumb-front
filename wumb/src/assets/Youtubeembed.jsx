@@ -50,6 +50,7 @@ const YoutubeEmbed = ({ radioData, i }) => {
           </div>
 
           <button onClick={nextVid}>Next Video!</button>
+          <ControlBar/>
         </div>
       </div>
     );

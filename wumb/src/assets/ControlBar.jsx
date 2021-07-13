@@ -43,13 +43,11 @@ function ControlBar() {
   }
 
   return (
-    <div>
-      <div id="controlbar" className="controlbar">
-        <button onClick={previousVideo}>Prev</button>
-        <button onClick={nextVideo}>Next </button>
-        <button onClick={playVideo}>Play</button>
-        <button onClick={pauseVideo}>Pause</button>
-      </div>
+    <div id="controlbar" className="controlbar">
+      <button onClick={previousVideo}>Prev</button>
+      <button onClick={playVideo}>Play</button>
+      <button onClick={pauseVideo}>Pause</button>
+      <button onClick={nextVideo}>Next</button>
     </div>
   );
 }
