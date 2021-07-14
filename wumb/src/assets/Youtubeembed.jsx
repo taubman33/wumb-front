@@ -28,9 +28,21 @@ const YoutubeEmbed = ({ radioData, i }) => {
   );
 
   const nextVid = () => {
-    setdisplayNum(displayNum + 1);
-    console.log(displayNum);
+    if (displayNum < radioData.length - 1) {
+      setdisplayNum(displayNum + 1);
+    }
+    return ""
   };
+
+
+  const prevVid = () => {
+    if (displayNum > 0) {
+      setdisplayNum(displayNum - 1);
+    }
+    return ""
+  };
+
+
 
   const urlSwitch = () => {
     if (onSwitch == "true") {
@@ -39,6 +51,7 @@ const YoutubeEmbed = ({ radioData, i }) => {
       setOnSwitch("true");
     }
   };
+
 
   console.log(displayNum);
 
@@ -60,16 +73,16 @@ const YoutubeEmbed = ({ radioData, i }) => {
             />
           </div>
 
-          <div className="screen-buttons">
-            <button className="cal-button" onClick={nextVid}>
-              Next Video!
-            </button>
-          
+
+          <button onClick={prevVid}>Previous Video</button>
+          <button onClick={nextVid}>Next Video</button>
+
 
             <button className="cal-button" onClick={urlSwitch}>
               Toggle Live Search 
             </button>
           </div>
+
 
         </div>
       </div>

@@ -19,21 +19,21 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
     setDisplayData(radioDataToDisplay);
   }, [startRange, endRange, radioData]);
 
+  const prevBatch = () => {
+    // needs an if statement to avoid an error at the end of the list
+
   const nextBatch = () => {
     
+
     setStartRange(startRange + 10);
     setEndRange(endRange + 10);
   };
 
-  const prevBatch = () => {
+  const nextBatch = () => {
     if (startRange < 10) {
       alert("Too far, go to next day!");
     } else {
 
-      setStartRange(startRange - 10);
-      setEndRange(endRange - 10);
-    }
-  };
 
   const tableRows = displayData.map((song) => {
     return (
@@ -67,13 +67,18 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
           </table>
 
           <div className="buttons">
-           
+
+            <button onClick={prevBatch} class="menu-button" id="next-button">
+              Click for earlier batch of songs!
+            </button>
 
             <button
-              onClick={prevBatch}
-              className="cal-button"
-              id="prev-button">
-            <img src = {RW} alt="rw-icon" class="icon-button"/>
+              onClick={nextBatch}
+              className="menu-button"
+              id="prev-button"
+            >
+              Click for later batch of songs!
+
             </button>
 
 
