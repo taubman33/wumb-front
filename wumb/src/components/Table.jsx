@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import FF from "../assets/FF.png"
+import Record from "../assets/Record.gif"
 
 function Table({ radioData, searchDay, searchMonth, searchYear }) {
 
@@ -66,8 +67,8 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
 
           <div className="buttons">
             <button onClick={nextBatch} class="cal-button" id="next-button">
-                Next Batch
-            </button>
+                <img src ={FF} alt="ff-button"/>
+           </button>
 
             <button
               onClick={prevBatch}
@@ -81,7 +82,9 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
       </div>
     );
   } else {
-    return <div>Loading, Please Wait!!</div>;
+    return <div>
+      <img src={Record} alt="record"/>
+    </div>;
   }
 }
 
