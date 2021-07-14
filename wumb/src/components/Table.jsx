@@ -14,13 +14,13 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
     setDisplayData(radioDataToDisplay);
   }, [startRange, endRange, radioData]);
 
-  const nextBatch = () => {
+  const prevBatch = () => {
     // needs an if statement to avoid an error at the end of the list
     setStartRange(startRange + 10);
     setEndRange(endRange + 10);
   };
 
-  const prevBatch = () => {
+  const nextBatch = () => {
     if (startRange < 10) {
       alert("Too far, go to next day!");
     } else {
@@ -61,12 +61,12 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
           </table>
 
           <div className="buttons">
-            <button onClick={nextBatch} class="menu-button" id="next-button">
+            <button onClick={prevBatch} class="menu-button" id="next-button">
               Click for earlier batch of songs!
             </button>
 
             <button
-              onClick={prevBatch}
+              onClick={nextBatch}
               className="menu-button"
               id="prev-button"
             >
