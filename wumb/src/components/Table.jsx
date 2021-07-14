@@ -18,19 +18,19 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
   }, [startRange, endRange, radioData]);
 
   const prevBatch = () => {
-    if (startRange < 10) {
+    if (startRange > radioData.length-11 ) {
       alert("Too early, go to previous day!");
     } else {
-      setStartRange(startRange - 10);
-      setEndRange(endRange - 10);
+      setStartRange(startRange + 10);
+      setEndRange(endRange + 10);
     }
   };
   const nextBatch = () => {
     if (startRange < 10) {
       alert("Too far, go to next day!");
     } else {
-      setStartRange(startRange + 10);
-      setEndRange(endRange + 10);
+      setStartRange(startRange - 10);
+      setEndRange(endRange - 10);
     }
   };
 
@@ -67,7 +67,7 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
 
           <div className="buttons">
             <button
-              onClick={nextBatch}
+              onClick={prevBatch}
               class="cal-button"
               className="menu-button"
               id="prev-button"
