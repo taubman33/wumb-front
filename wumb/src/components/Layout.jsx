@@ -7,13 +7,15 @@ import Main from "./Main";
 function Layout(isLoggedIn, setisLoggedIn, username) {
   return (
     <div>
-      <Header
+
+
+    <Header
         isLoggedIn={isLoggedIn}
         setisLoggedIn={setisLoggedIn}
         username={username}
       />
 
-      <Main isLoggedIn={isLoggedIn} />
+      <Main isLoggedIn={isLoggedIn}/>
     </div>
   );
 }

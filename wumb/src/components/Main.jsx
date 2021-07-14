@@ -29,10 +29,10 @@ function Main(isLoggedIn, youtubeLink) {
       <div className="main-container">
 
  <div className="main">
-        <Route exact path="/login"
+        {/* <Route exact path="/login"
                render={(props) => <Login {...props} />} />
         <Route exact path="/register"
-          render={(props) => <Register {...props} />}/>
+          render={(props) => <Register {...props} />}/> */}
         <Route exact path="/" render={() => 
                   <ContentContainer embedId={youtubeLink} />}/>
     </div>

@@ -74,8 +74,8 @@ const YoutubeEmbed = ({ radioData, i }) => {
           </div>
 
 
-          <button onClick={prevVid}>Previous Video</button>
-          <button onClick={nextVid}>Next Video</button>
+          <button onClick={prevVid} class="cal-button">Previous Video</button>
+          <button onClick={nextVid} class="cal-button">Next Video</button>
 
 
             <button className="cal-button" onClick={urlSwitch}>
@@ -85,7 +85,6 @@ const YoutubeEmbed = ({ radioData, i }) => {
 
 
         </div>
-      </div>
     );
   } else {
     return <div> Loading, please wait!!</div>;
