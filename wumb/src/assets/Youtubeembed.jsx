@@ -28,9 +28,19 @@ const YoutubeEmbed = ({ radioData, i }) => {
   );
 
   const nextVid = () => {
-    setdisplayNum(displayNum + 1);
-    console.log(displayNum);
+    if (displayNum < radioData.length - 1) {
+      setdisplayNum(displayNum + 1);
+    }
+    return ""
   };
+
+  const prevVid = () => {
+    if (displayNum > 0) {
+      setdisplayNum(displayNum - 1);
+    }
+    return ""
+  };
+
 
   console.log(displayNum);
 
@@ -49,8 +59,8 @@ const YoutubeEmbed = ({ radioData, i }) => {
             />
           </div>
 
-          <button onClick={nextVid}>Next Video!</button>
-          <ControlBar/>
+          <button onClick={prevVid}>Previous Video</button>
+          <button onClick={nextVid}>Next Video</button>
         </div>
       </div>
     );
