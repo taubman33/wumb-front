@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import ControlBar from "./ControlBar";
+
 
 const YoutubeEmbed = ({ radioData, i }) => {
   const [youTubeData, setYouTubeData] = useState(radioData);
   const [displayNum, setdisplayNum] = useState(0);
+  const [onSwitch, setOnSwitch] = useState("true");
 
-  // const [ytArtist, setytArtist] = useState(radioData[0].artist)
-  // const [ytTitle, setytTitle] = useState(radioData[0].title)
 
   useEffect(
     (i) => {
       const artistUrl = radioData[displayNum].artist.replace(/ /g, "%20");
       const titleUrl = radioData[displayNum].title.replace(/ /g, "%20");
-      const url = `https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=true`;
+
+      const url = `https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=${onSwitch}`;
 
       console.log(displayNum);
       fetch(url)
@@ -34,11 +34,22 @@ const YoutubeEmbed = ({ radioData, i }) => {
     return ""
   };
 
+
   const prevVid = () => {
     if (displayNum > 0) {
       setdisplayNum(displayNum - 1);
     }
     return ""
+  };
+
+
+
+  const urlSwitch = () => {
+    if (onSwitch == "true") {
+      setOnSwitch("false");
+    } else {
+      setOnSwitch("true");
+    }
   };
 
 
@@ -48,6 +59,9 @@ const YoutubeEmbed = ({ radioData, i }) => {
     console.log("display num third", displayNum);
     return (
       <div className="embed-container">
+        <div className = "true-message">
+          <h2> Live search is currently {onSwitch}</h2>
+        </div>
         <div className="video-container">
           <div className="video-responsive">
             <iframe
@@ -59,8 +73,17 @@ const YoutubeEmbed = ({ radioData, i }) => {
             />
           </div>
 
+
           <button onClick={prevVid}>Previous Video</button>
           <button onClick={nextVid}>Next Video</button>
+
+
+            <button className="cal-button" onClick={urlSwitch}>
+              Toggle Live Search 
+            </button>
+          </div>
+
+
         </div>
       </div>
     );

@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
+import FF from "../assets/FF.png"
+import RW from "../assets/RW.png"
+import Record from "../assets/Record.gif"
 
 function Table({ radioData, searchDay, searchMonth, searchYear }) {
+
   const [startRange, setStartRange] = useState(0);
   const [endRange, setEndRange] = useState(10);
   const [displayData, setDisplayData] = useState([]);
+
 
   useEffect(() => {
     const radioDataToDisplay = [];
@@ -16,6 +21,10 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
 
   const prevBatch = () => {
     // needs an if statement to avoid an error at the end of the list
+
+  const nextBatch = () => {
+    
+
     setStartRange(startRange + 10);
     setEndRange(endRange + 10);
   };
@@ -24,10 +33,7 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
     if (startRange < 10) {
       alert("Too far, go to next day!");
     } else {
-      setStartRange(startRange - 10);
-      setEndRange(endRange - 10);
-    }
-  };
+
 
   const tableRows = displayData.map((song) => {
     return (
@@ -61,6 +67,7 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
           </table>
 
           <div className="buttons">
+
             <button onClick={prevBatch} class="menu-button" id="next-button">
               Click for earlier batch of songs!
             </button>
@@ -71,13 +78,25 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
               id="prev-button"
             >
               Click for later batch of songs!
+
             </button>
+
+
+            <button onClick={nextBatch}
+                     class="cal-button" 
+                     id="next-button">
+               <img src = {FF} alt="ff-icon" class="icon-button"/>
+           </button>
+
+
           </div>
         </div>
       </div>
     );
   } else {
-    return <div>Loading, Please Wait!!</div>;
+    return <div>
+      <img src={Record} alt="record" id="record"/>
+    </div>;
   }
 }
 
