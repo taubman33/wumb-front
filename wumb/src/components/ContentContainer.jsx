@@ -42,19 +42,23 @@ const EmbedContainer = () => {
 
   return (
     <div className="embed-container">
-      <div className="searchbar-container">
-        <Searchbar
-          setSearchYear={setSearchYear}
-          setSearchMonth={setSearchMonth}
-          setSearchDay={setSearchDay}
-        />
-      </div>
+   
 
       <div className="youtube-player">
         {radioData ? (
           <div>
             <YTE radioData={radioData} />
           </div>
+        ) : null}
+      </div>
+
+      <div className="searchbar-container">
+      {radioData ? (
+        <Searchbar
+          setSearchYear={setSearchYear}
+          setSearchMonth={setSearchMonth}
+          setSearchDay={setSearchDay}
+        />
         ) : null}
       </div>
 

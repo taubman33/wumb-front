@@ -5,6 +5,7 @@ import ControlBar from "./ControlBar";
 const YoutubeEmbed = ({ radioData, i }) => {
   const [youTubeData, setYouTubeData] = useState(radioData);
   const [displayNum, setdisplayNum] = useState(0);
+  const [onSwitch, setOnSwitch] = useState("true");
 
   // const [ytArtist, setytArtist] = useState(radioData[0].artist)
   // const [ytTitle, setytTitle] = useState(radioData[0].title)
@@ -13,7 +14,8 @@ const YoutubeEmbed = ({ radioData, i }) => {
     (i) => {
       const artistUrl = radioData[displayNum].artist.replace(/ /g, "%20");
       const titleUrl = radioData[displayNum].title.replace(/ /g, "%20");
-      const url = `https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=true`;
+
+      const url = `https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=${onSwitch}`;
 
       console.log(displayNum);
       fetch(url)
@@ -30,6 +32,14 @@ const YoutubeEmbed = ({ radioData, i }) => {
   const nextVid = () => {
     setdisplayNum(displayNum + 1);
     console.log(displayNum);
+  };
+
+  const urlSwitch = () => {
+    if (onSwitch == "true") {
+      setOnSwitch("false");
+    } else {
+      setOnSwitch("true");
+    }
   };
 
   console.log(displayNum);
@@ -49,7 +59,17 @@ const YoutubeEmbed = ({ radioData, i }) => {
             />
           </div>
 
-          <button onClick={nextVid}>Next Video!</button>
+          <div className="screen-buttons">
+            <button className="cal-button" onClick={nextVid}>
+              Next Video!
+            </button>
+          
+
+            <button className="cal-button" onClick={urlSwitch}>
+              Toggle Live Search {onSwitch}
+            </button>
+          </div>
+
         </div>
       </div>
     );
