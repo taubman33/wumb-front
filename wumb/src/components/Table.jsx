@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FF from "../assets/FF.png"
+import RW from "../assets/RW.png"
 import Record from "../assets/Record.gif"
 
 function Table({ radioData, searchDay, searchMonth, searchYear }) {
@@ -66,24 +67,30 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
           </table>
 
           <div className="buttons">
-            <button onClick={nextBatch} class="cal-button" id="next-button">
-                <img src ={FF} alt="ff-button"/>
-           </button>
+           
 
             <button
               onClick={prevBatch}
               className="cal-button"
-              id="prev-button"
-            >
-              Previous Batch
+              id="prev-button">
+            <img src = {RW} alt="rw-icon" class="icon-button"/>
             </button>
+
+
+            <button onClick={nextBatch}
+                     class="cal-button" 
+                     id="next-button">
+               <img src = {FF} alt="ff-icon" class="icon-button"/>
+           </button>
+
+
           </div>
         </div>
       </div>
     );
   } else {
     return <div>
-      <img src={Record} alt="record"/>
+      <img src={Record} alt="record" id="record"/>
     </div>;
   }
 }
