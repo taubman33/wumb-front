@@ -68,15 +68,14 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
           <div className="buttons">
             <button
               onClick={prevBatch}
-              class="cal-button"
-              className="menu-button"
+              className="arrow-button"
               id="prev-button"
             >
-              <img src={RW} alt="rw-icon" class="icon-button" />
+              <img src={RW} alt="rw-icon" className="icon-button" />
             </button>
 
-            <button onClick={nextBatch} class="cal-button" id="next-button">
-              <img src={FF} alt="ff-icon" class="icon-button" />
+            <button onClick={nextBatch} className="arrow-button" id="next-button">
+              <img src={FF} alt="ff-icon" className="icon-button"/>
             </button>
           </div>
         </div>

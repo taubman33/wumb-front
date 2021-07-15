@@ -7,6 +7,17 @@ iframe {
     border-radius: 10%;
 }
 
+.arrow-button {
+  margin: 1rem;
+  background-color: rgb(7, 179, 90);
+  padding: .5em;
+  border: 1 px solid white;
+  border-radius: 7%;
+  font-family: 'IBM Plex Mono', monospace;
+  width:20%
+}
+
+
 .App {
   height:100%;
   text-align: center;
@@ -54,8 +65,9 @@ border-bottom: 2px solid white;
   font-family: 'IBM Plex Mono', monospace;
 }
 
+
 .icon-button {
-  width: 50%;
+  width: 30%;
 }
 
 .nav {
