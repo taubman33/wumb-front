@@ -4,14 +4,14 @@ import Table from "./Table";
 import Searchbar from "./Searchbar";
 
 const EmbedContainer = () => {
-  
   const today = new Date()              // creates todays date
     .toLocaleDateString()               // converts to string in (month/date/year) format
     .split("/")                         // converts to array with 3 items [month,date,year]
     .map((i) => (i = "0" + i))          // adds an extra zero for single digit dates (i.e. may 6th)
     .map((i) => i.slice(-2));           // returns array with with items [mm, dd, yy]
-  
+
   const [radioData, setRadioData] = useState("");
+  const [selectedSong, setSelectedSong] = useState([]);
   const [searchYear, setSearchYear] = useState(today[2]);
   const [searchMonth, setSearchMonth] = useState(today[0]);
   const [searchDay, setSearchDay] = useState(today[1]);
@@ -36,28 +36,28 @@ const EmbedContainer = () => {
           };
         });
         setRadioData(data);
+        setSelectedSong(data[0]);
       })
       .catch(console.error);
   }, [searchYear, searchMonth, searchDay]);
 
   return (
     <div className="embed-container">
-  
       <div className="youtube-player">
         {radioData ? (
           <div>
-            <YTE radioData={radioData} />
+            <YTE radioData={radioData} selectedSong={selectedSong} />
           </div>
         ) : null}
       </div>
 
       <div className="searchbar-container">
-      {radioData ? (
-        <Searchbar
-          setSearchYear={setSearchYear}
-          setSearchMonth={setSearchMonth}
-          setSearchDay={setSearchDay}
-        />
+        {radioData ? (
+          <Searchbar
+            setSearchYear={setSearchYear}
+            setSearchMonth={setSearchMonth}
+            setSearchDay={setSearchDay}
+          />
         ) : null}
       </div>
 
@@ -67,6 +67,7 @@ const EmbedContainer = () => {
           searchDay={searchDay}
           searchMonth={searchMonth}
           searchYear={searchYear}
+          setSelectedSong={setSelectedSong}
         />
       </div>
     </div>

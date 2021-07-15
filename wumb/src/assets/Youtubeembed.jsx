@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-
-const YoutubeEmbed = ({ radioData, i }) => {
-  const [youTubeData, setYouTubeData] = useState(radioData);
+const YoutubeEmbed = ({ radioData, selectedSong, i }) => {
+  const [youTubeData, setYouTubeData] = useState(selectedSong);
   const [displayNum, setdisplayNum] = useState(0);
   const [onSwitch, setOnSwitch] = useState("true");
 
-
   useEffect(
     (i) => {
-      const artistUrl = radioData[displayNum].artist.replace(/ /g, "%20");
-      const titleUrl = radioData[displayNum].title.replace(/ /g, "%20");
-
+      const artistUrl = selectedSong.artist.replace(/ /g, "%20");
+      const titleUrl = selectedSong.title.replace(/ /g, "%20");
+      console.log(artistUrl)
+      console.log(titleUrl)
       const url = `https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=${onSwitch}`;
 
-      console.log(displayNum);
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
@@ -24,42 +22,35 @@ const YoutubeEmbed = ({ radioData, i }) => {
         })
         .catch(console.error);
     },
-    [radioData, displayNum]
+    [selectedSong, onSwitch]
   );
 
   const nextVid = () => {
     if (displayNum < radioData.length - 1) {
       setdisplayNum(displayNum + 1);
     }
-    return ""
+    return "";
   };
-
 
   const prevVid = () => {
     if (displayNum > 0) {
       setdisplayNum(displayNum - 1);
     }
-    return ""
+    return "";
   };
 
-
-
   const urlSwitch = () => {
-    if (onSwitch == "true") {
+    if (onSwitch === "true") {
       setOnSwitch("false");
     } else {
       setOnSwitch("true");
     }
   };
 
-
-  console.log(displayNum);
-
   if (radioData && youTubeData) {
-    console.log("display num third", displayNum);
     return (
       <div className="embed-container">
-        <div className = "true-message">
+        <div className="true-message">
           <h2> Live search is currently {onSwitch}</h2>
         </div>
         <div className="video-container">
@@ -73,18 +64,18 @@ const YoutubeEmbed = ({ radioData, i }) => {
             />
           </div>
 
+          <button onClick={prevVid} class="cal-button">
+            Previous Video
+          </button>
+          <button onClick={nextVid} class="cal-button">
+            Next Video
+          </button>
 
-          <button onClick={prevVid} class="cal-button">Previous Video</button>
-          <button onClick={nextVid} class="cal-button">Next Video</button>
-
-
-            <button className="cal-button" onClick={urlSwitch}>
-              Toggle Live Search 
-            </button>
-          </div>
-
-
+          <button className="cal-button" onClick={urlSwitch}>
+            Toggle Live Search
+          </button>
         </div>
+      </div>
     );
   } else {
     return <div> Loading, please wait!!</div>;

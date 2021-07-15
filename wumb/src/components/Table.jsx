@@ -3,7 +3,7 @@ import FF from "../assets/FF.png";
 import RW from "../assets/RW.png";
 import Record from "../assets/Record.gif";
 
-function Table({ radioData, searchDay, searchMonth, searchYear }) {
+function Table({ radioData, searchDay, searchMonth, searchYear, setSelectedSong }) {
   const [startRange, setStartRange] = useState(0);
   const [endRange, setEndRange] = useState(10);
   const [displayData, setDisplayData] = useState([]);
@@ -15,6 +15,7 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
       radioDataToDisplay.push(radioData[i]);
     }
     setDisplayData(radioDataToDisplay);
+
   }, [startRange, endRange, radioData]);
 
   const prevBatch = () => {
@@ -25,6 +26,7 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
       setEndRange(endRange + 10);
     }
   };
+
   const nextBatch = () => {
     if (startRange < 10) {
       alert("Too far, go to next day!");
@@ -34,9 +36,34 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
     }
   };
 
-  const tableRows = displayData.map((song) => {
+  const selectSong = (e) => {
+    e.preventDefault()
+    // removes 'selected' from className of all <tr>s
+    const allRows = document.getElementsByClassName("row")
+    for (let i=0; i < allRows.length; i++){
+      allRows[i].classList.remove('selected')
+    }
+
+    // adds 'selected' to the className of the clicked <tr>
+    const rowElement = e.target.parentNode
+    rowElement.classList.add("selected")
+
+    // sets the selected song
+    const rowId = e.target.parentNode.id
+    const song = displayData[rowId]
+    setSelectedSong(song)
+  }
+
+  const tableRows = displayData.map((song, i) => {
+    if (i===0) return (
+      <tr key={song.time} className="row selected" id={i} onClick={selectSong}>
+        <td>{song.time}</td>
+        <td>{song.artist}</td>
+        <td>{song.title}</td>
+      </tr>
+    )
     return (
-      <tr key={song.time} className="row">
+      <tr key={song.time} className="row" id={i} onClick={selectSong}>
         <td>{song.time}</td>
         <td>{song.artist}</td>
         <td>{song.title}</td>
@@ -69,7 +96,6 @@ function Table({ radioData, searchDay, searchMonth, searchYear }) {
             <button
               onClick={prevBatch}
               class="cal-button"
-              className="menu-button"
               id="prev-button"
             >
               <img src={RW} alt="rw-icon" class="icon-button" />
