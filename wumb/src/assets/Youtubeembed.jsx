@@ -30,11 +30,15 @@ const YoutubeEmbed = ({ radioData, selectedSong, setSongId, i }) => {
     } else {
       // removes 'selected' from the className of the currently selected <tr>
       const currentSelectedRow = document.getElementById(`song_${song_id}`);
-      currentSelectedRow.classList.remove("selected");
+      if (currentSelectedRow) {
+        currentSelectedRow.classList.remove("selected");
+      }
 
       // adds 'selected' to the className of the previous <tr>
       const prevRow = document.getElementById(`song_${song_id + 1}`);
-      prevRow.classList.add("selected");
+      if (prevRow) {
+        prevRow.classList.add("selected");
+      }
 
       // Updates the songId hook
       setSongId(song_id + 1);
@@ -48,11 +52,15 @@ const YoutubeEmbed = ({ radioData, selectedSong, setSongId, i }) => {
     } else {
       // removes 'selected' from the className of the currently selected <tr>
       const currentSelectedRow = document.getElementById(`song_${song_id}`);
-      currentSelectedRow.classList.remove("selected");
+      if (currentSelectedRow) {
+        currentSelectedRow.classList.remove("selected");
+      }
 
       // adds 'selected' to the className of the previous <tr>
       const prevRow = document.getElementById(`song_${song_id - 1}`);
-      prevRow.classList.add("selected");
+      if (prevRow) {
+        prevRow.classList.add("selected");
+      }
 
       // Updates the songId hook
       setSongId(song_id - 1);
