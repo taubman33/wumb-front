@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-const YoutubeEmbed = ({ radioData, selectedSong, i }) => {
+const YoutubeEmbed = ({ radioData, selectedSong, setSongId, i }) => {
   const [youTubeData, setYouTubeData] = useState(selectedSong);
-  const [displayNum, setdisplayNum] = useState(0);
   const [onSwitch, setOnSwitch] = useState("true");
 
+  // Fetches youtube data using the 'selectedSong' info
   useEffect(
     (i) => {
       const artistUrl = selectedSong.artist.replace(/ /g, "%20");
       const titleUrl = selectedSong.title.replace(/ /g, "%20");
-      console.log(artistUrl)
-      console.log(titleUrl)
       const url = `https://wumb-proxy-2.herokuapp.com/search-yt-api?artist=${artistUrl}&title=${titleUrl}&live=${onSwitch}`;
 
       fetch(url)
@@ -26,17 +24,39 @@ const YoutubeEmbed = ({ radioData, selectedSong, i }) => {
   );
 
   const nextVid = () => {
-    if (displayNum < radioData.length - 1) {
-      setdisplayNum(displayNum + 1);
+    const song_id = selectedSong.song_id
+    if (song_id === radioData.length - 1) {
+      alert('Too far, go to next day!')
+    } else {
+      // removes 'selected' from the className of the currently selected <tr>
+      const currentSelectedRow = document.getElementById(`song_${song_id}`)
+      currentSelectedRow.classList.remove('selected')
+
+      // adds 'selected' to the className of the previous <tr>
+      const prevRow = document.getElementById(`song_${song_id + 1}`)
+      prevRow.classList.add("selected")
+      
+      // Updates the songId hook
+      setSongId(song_id + 1);
     }
-    return "";
   };
 
   const prevVid = () => {
-    if (displayNum > 0) {
-      setdisplayNum(displayNum - 1);
+    const song_id = selectedSong.song_id
+    if (song_id === 0) {
+      alert('Too early, go to previous day!')
+    } else {
+      // removes 'selected' from the className of the currently selected <tr>
+      const currentSelectedRow = document.getElementById(`song_${song_id}`)
+      currentSelectedRow.classList.remove('selected')
+      
+      // adds 'selected' to the className of the previous <tr>
+      const prevRow = document.getElementById(`song_${song_id - 1}`)
+      prevRow.classList.add("selected")
+      
+      // Updates the songId hook
+      setSongId(song_id - 1);
     }
-    return "";
   };
 
   const urlSwitch = () => {
@@ -47,7 +67,7 @@ const YoutubeEmbed = ({ radioData, selectedSong, i }) => {
     }
   };
 
-  if (radioData && youTubeData) {
+  if (selectedSong && youTubeData) {
     return (
       <div className="embed-container">
         <div className="true-message">

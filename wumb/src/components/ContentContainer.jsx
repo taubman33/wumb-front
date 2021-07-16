@@ -11,12 +11,15 @@ const EmbedContainer = () => {
     .map((i) => i.slice(-2));           // returns array with with items [mm, dd, yy]
 
   const [radioData, setRadioData] = useState("");
-  const [selectedSong, setSelectedSong] = useState([]);
+  const [selectedSong, setSelectedSong] = useState("");
+  const [songId, setSongId] = useState("")
   const [searchYear, setSearchYear] = useState(today[2]);
   const [searchMonth, setSearchMonth] = useState(today[0]);
   const [searchDay, setSearchDay] = useState(today[1]);
 
-  // fetch code + return for table.
+  // Fetches playlist data from WUMB for a given date
+  // Sets 'songId' to 0 which is the latest song played on wumb
+  // Runs everytime [searchYear, searchMonth, searchDay] chnages
   useEffect(() => {
     fetch(
       `https://wumb-proxy-2.herokuapp.com/parse?live=true&d=${searchYear}${searchMonth}${searchDay}`
@@ -28,25 +31,31 @@ const EmbedContainer = () => {
         const tbs = doc
           .querySelector("#MainContentTextOnly")
           .querySelectorAll("tbody");
-        const data = Array.from(tbs).map((tb) => {
+        const data = Array.from(tbs).map((tb, i) => {
           return {
+            song_id: i,
             time: tb.children[0].children[0].innerText.replaceAll("\n", ""),
             artist: tb.children[0].children[1].innerText.replaceAll("\n", ""),
             title: tb.children[1].innerText.replaceAll("\n", ""),
           };
         });
         setRadioData(data);
-        setSelectedSong(data[0]);
+        setSongId(data[0].song_id);
       })
       .catch(console.error);
   }, [searchYear, searchMonth, searchDay]);
 
+  // Sets 'selectedSong' to the songId from radioData
+  useEffect(() => {
+    setSelectedSong(radioData[songId])
+  }, [songId])
+
   return (
     <div className="embed-container">
       <div className="youtube-player">
-        {radioData ? (
+        {selectedSong ? (
           <div>
-            <YTE radioData={radioData} selectedSong={selectedSong} />
+            <YTE radioData={radioData} selectedSong={selectedSong} songId={songId} setSongId={setSongId}/>
           </div>
         ) : null}
       </div>
@@ -68,6 +77,7 @@ const EmbedContainer = () => {
           searchMonth={searchMonth}
           searchYear={searchYear}
           setSelectedSong={setSelectedSong}
+          setSongId={setSongId}
         />
       </div>
     </div>
