@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "./Nav";
+// import Nav from "./Nav";
 
 //Nothing too exciting here, but will have alternate displays in Nav if user is logged in or not.
 //Thinking that this willrequire UseContext

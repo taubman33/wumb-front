@@ -24,36 +24,36 @@ const YoutubeEmbed = ({ radioData, selectedSong, setSongId, i }) => {
   );
 
   const nextVid = () => {
-    const song_id = selectedSong.song_id
+    const song_id = selectedSong.song_id;
     if (song_id === radioData.length - 1) {
-      alert('Too far, go to next day!')
+      alert("Too far, go to next day!");
     } else {
       // removes 'selected' from the className of the currently selected <tr>
-      const currentSelectedRow = document.getElementById(`song_${song_id}`)
-      currentSelectedRow.classList.remove('selected')
+      const currentSelectedRow = document.getElementById(`song_${song_id}`);
+      currentSelectedRow.classList.remove("selected");
 
       // adds 'selected' to the className of the previous <tr>
-      const prevRow = document.getElementById(`song_${song_id + 1}`)
-      prevRow.classList.add("selected")
-      
+      const prevRow = document.getElementById(`song_${song_id + 1}`);
+      prevRow.classList.add("selected");
+
       // Updates the songId hook
       setSongId(song_id + 1);
     }
   };
 
   const prevVid = () => {
-    const song_id = selectedSong.song_id
+    const song_id = selectedSong.song_id;
     if (song_id === 0) {
-      alert('Too early, go to previous day!')
+      alert("Too early, go to previous day!");
     } else {
       // removes 'selected' from the className of the currently selected <tr>
-      const currentSelectedRow = document.getElementById(`song_${song_id}`)
-      currentSelectedRow.classList.remove('selected')
-      
+      const currentSelectedRow = document.getElementById(`song_${song_id}`);
+      currentSelectedRow.classList.remove("selected");
+
       // adds 'selected' to the className of the previous <tr>
-      const prevRow = document.getElementById(`song_${song_id - 1}`)
-      prevRow.classList.add("selected")
-      
+      const prevRow = document.getElementById(`song_${song_id - 1}`);
+      prevRow.classList.add("selected");
+
       // Updates the songId hook
       setSongId(song_id - 1);
     }

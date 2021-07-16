@@ -15,11 +15,11 @@ function Table({ radioData, searchDay, searchMonth, searchYear, setSongId }) {
       radioDataToDisplay.push(radioData[i]);
     }
     setDisplayData(radioDataToDisplay);
-    setSongId(startRange)
+    setSongId(startRange);
   }, [startRange, endRange, radioData]);
 
   const prevBatch = () => {
-    if (startRange > radioData.length-11 ) {
+    if (startRange > radioData.length - 11) {
       alert("Too early, go to previous day!");
     } else {
       setStartRange(startRange + 10);
@@ -37,32 +37,43 @@ function Table({ radioData, searchDay, searchMonth, searchYear, setSongId }) {
   };
 
   const handleClickRow = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // removes 'selected' from className of all <tr> tags
-    const allRows = document.getElementsByClassName("row")
-    for (let i=0; i < allRows.length; i++){
-      allRows[i].classList.remove('selected')
+    const allRows = document.getElementsByClassName("row");
+    for (let i = 0; i < allRows.length; i++) {
+      allRows[i].classList.remove("selected");
     }
 
     // adds 'selected' to the className of the clicked <tr>
-    const rowElement = e.target.parentNode
-    rowElement.classList.add("selected")
+    const rowElement = e.target.parentNode;
+    rowElement.classList.add("selected");
 
     // sets the selected song
-    const song_id = e.target.parentNode.id.replace('song_', "")
-    setSongId(song_id)
-  }
+    const song_id = e.target.parentNode.id.replace("song_", "");
+    setSongId(song_id);
+  };
 
   const tableRows = displayData.map((song, i) => {
-    if (i===0) return (
-      <tr key={song.time} className="row selected" id={'song_'+song.song_id} onClick={handleClickRow}>
-        <td>{song.time}</td>
-        <td>{song.artist}</td>
-        <td>{song.title}</td>
-      </tr>
-    )
+    if (i === 0)
+      return (
+        <tr
+          key={song.time}
+          className="row selected"
+          id={"song_" + song.song_id}
+          onClick={handleClickRow}
+        >
+          <td>{song.time}</td>
+          <td>{song.artist}</td>
+          <td>{song.title}</td>
+        </tr>
+      );
     return (
-      <tr key={song.time} className="row" id={'song_'+song.song_id} onClick={handleClickRow}>
+      <tr
+        key={song.time}
+        className="row"
+        id={"song_" + song.song_id}
+        onClick={handleClickRow}
+      >
         <td>{song.time}</td>
         <td>{song.artist}</td>
         <td>{song.title}</td>
@@ -92,11 +103,7 @@ function Table({ radioData, searchDay, searchMonth, searchYear, setSongId }) {
           </table>
 
           <div className="buttons">
-            <button
-              onClick={prevBatch}
-              class="cal-button"
-              id="prev-button"
-            >
+            <button onClick={prevBatch} class="cal-button" id="prev-button">
               <img src={RW} alt="rw-icon" class="icon-button" />
             </button>
 

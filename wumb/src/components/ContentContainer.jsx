@@ -45,10 +45,10 @@ const EmbedContainer = () => {
       .catch(console.error);
   }, [searchYear, searchMonth, searchDay]);
 
-  // Sets 'selectedSong' to the songId from radioData
+  // Sets 'selectedSong' to the songId index of radioData
   useEffect(() => {
     setSelectedSong(radioData[songId])
-  }, [songId])
+  }, [radioData, songId])
 
   return (
     <div className="embed-container">
