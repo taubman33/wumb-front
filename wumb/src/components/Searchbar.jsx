@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CalendarContainer from "./CalendarContainer";
 
 function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
   const [dateInput, setDateInput] = useState("");
-  const [timeInput, setTimeInput] = useState("");
-  const [minuteTime, setMinuteTime] = useState("");
-  const [hourTime, setHourTime] = useState("");
-  const [ytTime, setYtTime] = useState("");
+  // const [timeInput, setTimeInput] = useState("");
+  // const [minuteTime, setMinuteTime] = useState("");
+  // const [hourTime, setHourTime] = useState("");
+  // const [ytTime, setYtTime] = useState("");
 
   const searchWUMB = (e) => {
     e.preventDefault();

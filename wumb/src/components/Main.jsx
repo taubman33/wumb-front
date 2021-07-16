@@ -1,8 +1,8 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import ContentContainer from "./ContentContainer";
-import Login from "../forms/Login";
-import Register from "../forms/Register";
+// import Login from "../forms/Login";
+// import Register from "../forms/Register";
 
 //our Main component, nested within Layout from App. This will contain all of our site content -> 
 //YT player, playlist table, + all command buttons and search options
