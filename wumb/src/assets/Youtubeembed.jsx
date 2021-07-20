@@ -85,20 +85,18 @@ const YoutubeEmbed = ({ radioData, selectedSong, setSongId, i }) => {
           <div className="video-responsive">
             <iframe
               src={`https://www.youtube.com/embed/${youTubeData}`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="autoplay; fullscreen"
               allowFullScreen
-              controls="0"
               title="Embedded youtube"
             />
           </div>
 
           <button onClick={prevVid} class="cal-button">
-            Previous Video
+            Previous Track
           </button>
           <button onClick={nextVid} class="cal-button">
-            Next Video
+            Next Track
           </button>
-
           <button className="cal-button" onClick={urlSwitch}>
             Toggle Live Search
           </button>
