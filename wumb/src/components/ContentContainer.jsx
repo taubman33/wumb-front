@@ -76,10 +76,6 @@ const EmbedContainer = () => {
         ) : null}
       </div>
 
-      {/* <div className="youtube-controler">
-        <ControlBar />
-      </div> */}
-
       <div className="queue-table">
         <Table
           radioData={radioData}
