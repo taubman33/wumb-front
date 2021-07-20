@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import YTE from "../assets/Youtubeembed";
+import ControlBar from './ControlBar'
 import Table from "./Table";
 import Searchbar from "./Searchbar";
 
@@ -59,7 +60,9 @@ const EmbedContainer = () => {
           </div>
         ) : null}
       </div>
-
+      {/* <div className="youtube-controler">
+        <ControlBar />
+      </div> */}
       <div className="searchbar-container">
         {radioData ? (
           <Searchbar
