@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
   const [dateInput, setDateInput] = useState("");
+  const [showCalendar, setShowCalendar] = useState(false);
 
   // TODO: Do we take away the search function completely, and have the page reload onClick of the date?
   const searchWUMB = (e) => {
@@ -18,6 +19,11 @@ function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
     setDateInput(searchDate);
   };
 
+  const toggleCalendar = (e) => {
+    e.preventDefault();
+    setShowCalendar(!showCalendar);
+  };
+
   return (
     <div className="searchbar-container">
       {/* <div className="calendar">
@@ -25,13 +31,20 @@ function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
             {...{ setSearchYear, setSearchMonth, setSearchDay }}
           />
         </div> */}
-      <label>Search historical playlists on WUMB radio</label>
-      <br />
-      <input type="date" label="date" onChange={handleDateClick} />
-      <br />
-      <button className="search-button" onClick={searchWUMB}>
-        Search WUMB Playlist
-      </button>
+
+      <div>Search historical playlists on WUMB radio</div>
+      {showCalendar ? (
+        <>
+          <input type="date" label="date" onChange={handleDateClick} />
+          <button className="search-button" onClick={searchWUMB}>
+            Search
+          </button>
+          <br />
+          <button onClick={toggleCalendar}>Close Calendar</button>
+        </>
+      ) : (
+        <button onClick={toggleCalendar}>Open Calendar</button>
+      )}
     </div>
   );
 }
