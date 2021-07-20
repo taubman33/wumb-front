@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import ControlBar from "../components/ControlBar";
+import ControlBar from "./ControlBar";
 
 const YoutubeEmbed = ({ radioData, selectedSong, songId, setSongId }) => {
   const [youTubeData, setYouTubeData] = useState(selectedSong);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import YTE from "../assets/Youtubeembed";
+import YTE from "./Youtubeembed";
 import Table from "./Table";
 import Searchbar from "./Searchbar";
 
