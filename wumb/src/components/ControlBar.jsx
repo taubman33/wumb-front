@@ -1,13 +1,9 @@
-import React from "react";
-
-//we have 'player' here for the player, but the embed component uses a diffeerent terminology.
-//ergo, we will have to connect the two eventually and change some wordage.
-//But between the fetch command and the date/time setup, these are 4th or 5th in our task agenda heirarchy.
+import React, { useState } from "react";
 
 function ControlBar({ songId, setSongId, radioData }) {
   var YoutubePlayer = document.getElementsByTagName("iframe")[0];
   console.log(YoutubePlayer);
-  // const [videoIsPaused, setVideoIsPaused] = useState(false);
+  const [videoIsPaused, setVideoIsPaused] = useState(true);
 
   function nextVideo() {
     if (songId === radioData.length - 1) {
@@ -77,13 +73,13 @@ function ControlBar({ songId, setSongId, radioData }) {
   return (
     <div id="controlbar" className="controlbar">
       <button onClick={previousVideo} class="cal-button">
-        Prev Track
+        {"|<"}
       </button>
       {/* <button onClick={playPauseVideo} class="cal-button">
         {videoIsPaused ? "Play" : "Pause"}
       </button> */}
       <button onClick={nextVideo} class="cal-button">
-        Next Track
+      {">|"}
       </button>
     </div>
   );

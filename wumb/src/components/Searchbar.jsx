@@ -40,10 +40,10 @@ function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
             Search
           </button>
           <br />
-          <button onClick={toggleCalendar}>Close Calendar</button>
+          <button onClick={toggleCalendar} class="cal-button">Close Calendar</button>
         </>
       ) : (
-        <button onClick={toggleCalendar}>Open Calendar</button>
+        <button onClick={toggleCalendar} class="cal-button">Open Calendar</button>
       )}
     </div>
   );
