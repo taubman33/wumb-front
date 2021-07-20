@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import YTE from "../assets/Youtubeembed";
-import ControlBar from './ControlBar'
+import ControlBar from "./ControlBar";
 import Table from "./Table";
 import Searchbar from "./Searchbar";
 
 const EmbedContainer = () => {
-  const today = new Date()              // creates todays date
-    .toLocaleDateString()               // converts to string in (month/date/year) format
-    .split("/")                         // converts to array with 3 items [month,date,year]
-    .map((i) => (i = "0" + i))          // adds an extra zero for single digit dates (i.e. may 6th)
-    .map((i) => i.slice(-2));           // returns array with with items [mm, dd, yy]
+  const today = new Date() // creates todays date
+    .toLocaleDateString() // converts to string in (month/date/year) format
+    .split("/") // converts to array with 3 items [month,date,year]
+    .map((i) => (i = "0" + i)) // adds an extra zero for single digit dates (i.e. may 6th)
+    .map((i) => i.slice(-2)); // returns array with with items [mm, dd, yy]
 
   const [radioData, setRadioData] = useState("");
   const [selectedSong, setSelectedSong] = useState("");
-  const [songId, setSongId] = useState("")
+  const [songId, setSongId] = useState("");
   const [searchYear, setSearchYear] = useState(today[2]);
   const [searchMonth, setSearchMonth] = useState(today[0]);
   const [searchDay, setSearchDay] = useState(today[1]);
@@ -48,15 +48,20 @@ const EmbedContainer = () => {
 
   // Sets 'selectedSong' to the songId index of radioData
   useEffect(() => {
-    setSelectedSong(radioData[songId])
-  }, [radioData, songId])
+    setSelectedSong(radioData[songId]);
+  }, [radioData, songId]);
 
   return (
     <div className="embed-container">
       <div className="youtube-player">
         {selectedSong ? (
           <div>
-            <YTE radioData={radioData} selectedSong={selectedSong} songId={songId} setSongId={setSongId}/>
+            <YTE
+              radioData={radioData}
+              selectedSong={selectedSong}
+              songId={songId}
+              setSongId={setSongId}
+            />
           </div>
         ) : null}
       </div>
