@@ -44,16 +44,8 @@ const YoutubeEmbed = ({ radioData, selectedSong, songId, setSongId }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-
             {/* <iframe src="https://www.youtube.com/embed/VIDEO_ID?playlist=wOwblaKmyVw,ZbZSe6N_BXs" title="YouTube video player playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
           </div>
-
-          {/* <button onClick={prevVid} class="cal-button">
-            Previous Track
-          </button>
-          <button onClick={nextVid} class="cal-button">
-            Next Track
-          </button> */}
           <div className="youtube-controler">
             <ControlBar
               radioData={radioData}
