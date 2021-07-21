@@ -43,24 +43,33 @@ iframe {
 }
 
 .header-container {
+border-bottom: 2px solid white;
+}
+
+.header-text {
   background-color:rgb(94, 39, 2) ;
   height: 7rem;
  display: flex;
  flex-direction: column;
  justify-content: space-around;
-border-bottom: 2px solid white;
-}
-
-.header-text {
  padding-top: -1.5rem; 
 }
+
+
+.header-text2{
+background-color: pink;
+padding: .5em;
+font-family: 'IBM Plex Mono', monospace;
+font-size: small;
+}
+
 
 .home-screen-container{
   margin-top:3rem;
   background-color: rgb(250, 237, 186);
   padding-top: 1%;
   padding-bottom: 3%;
-  border: 10px solid black;
+  border: 10px solid red;
   border-radius: 25%;
   font-family: 'IBM Plex Mono', monospace;
 }

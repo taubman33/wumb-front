@@ -6,15 +6,14 @@ import React from "react";
 function Header(isLoggedIn, setisLoggedIn, username) {
   return (
     <div className="header-container">
+
       <div className="header-text">
         <h1 id="header-title"> WUMB - listen </h1>
       </div>
 
-      {/* <div className="nav-container">
-                <Nav isLoggedIn={isLoggedIn}
-                     setisLoggedIn={setisLoggedIn}
-                     username={username}/>
-            </div> */}
+      <div className="header-text2">
+        <h2 id ="search-text">Search historical playlists on WUMB radio </h2>
+        </div>
     </div>
   );
 }

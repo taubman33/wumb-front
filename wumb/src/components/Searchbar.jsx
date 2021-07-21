@@ -32,7 +32,7 @@ function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
           />
         </div> */}
 
-      <div>Search historical playlists on WUMB radio</div>
+      
       {showCalendar ? (
         <>
           <input type="date" label="date" onChange={handleDateClick} />
