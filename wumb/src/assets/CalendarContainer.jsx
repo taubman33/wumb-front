@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Calendar from "../assets/Calendar";
+import Calendar from "./Calendar";
 
 function CalContainer({
   handleDateSubmit,

@@ -103,13 +103,20 @@ function Table({ radioData, searchDay, searchMonth, searchYear, setSongId }) {
           </table>
 
           <div className="buttons">
-
-            <button onClick={prevBatch} className="arrow-button" id="prev-button">
+            <button
+              onClick={prevBatch}
+              className="arrow-button"
+              id="prev-button"
+            >
               <img src={RW} alt="rw-icon" className="icon-button" />
             </button>
 
-            <button onClick={nextBatch} className="arrow-button" id="next-button">
-              <img src={FF} alt="ff-icon" className="icon-button"/>
+            <button
+              onClick={nextBatch}
+              className="arrow-button"
+              id="next-button"
+            >
+              <img src={FF} alt="ff-icon" className="icon-button" />
             </button>
           </div>
         </div>
