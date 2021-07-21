@@ -72,13 +72,13 @@ function ControlBar({ songId, setSongId, radioData }) {
 
   return (
     <div id="controlbar" className="controlbar">
-      <button onClick={previousVideo} class="cal-button">
+      <button onClick={previousVideo} className="cal-button ">
         {"|<"}
       </button>
       {/* <button onClick={playPauseVideo} class="cal-button">
         {videoIsPaused ? "Play" : "Pause"}
       </button> */}
-      <button onClick={nextVideo} class="cal-button">
+      <button onClick={nextVideo} className="cal-button">
       {">|"}
       </button>
     </div>

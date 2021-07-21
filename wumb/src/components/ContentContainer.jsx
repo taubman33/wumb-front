@@ -4,11 +4,11 @@ import Table from "./Table";
 import Searchbar from "./Searchbar";
 
 const EmbedContainer = () => {
-  const today = new Date()      // creates todays date
-    .toLocaleDateString()       // converts to string in (month/date/year) format
-    .split("/")                 // converts to array with 3 items [month,date,year]
-    .map((i) => (i = "0" + i))  // adds an extra zero for single digit dates (i.e. may 6th)
-    .map((i) => i.slice(-2));   // returns array with with items [mm, dd, yy]
+  const today = new Date() // creates todays date
+    .toLocaleDateString() // converts to string in (month/date/year) format
+    .split("/") // converts to array with 3 items [month,date,year]
+    .map((i) => (i = "0" + i)) // adds an extra zero for single digit dates (i.e. may 6th)
+    .map((i) => i.slice(-2)); // returns array with with items [mm, dd, yy]
 
   const [radioData, setRadioData] = useState("");
   const [selectedSong, setSelectedSong] = useState("");
@@ -52,16 +52,6 @@ const EmbedContainer = () => {
 
   return (
     <div className="embed-container">
-      <div className="searchbar-container">
-        {radioData ? (
-          <Searchbar
-            setSearchYear={setSearchYear}
-            setSearchMonth={setSearchMonth}
-            setSearchDay={setSearchDay}
-          />
-        ) : null}
-      </div>
-
       <div className="youtube-player">
         {selectedSong ? (
           <div>
@@ -75,15 +65,27 @@ const EmbedContainer = () => {
         ) : null}
       </div>
 
-      <div className="queue-table">
-        <Table
-          radioData={radioData}
-          searchDay={searchDay}
-          searchMonth={searchMonth}
-          searchYear={searchYear}
-          setSelectedSong={setSelectedSong}
-          setSongId={setSongId}
-        />
+      <div className="table-and-searchbar">
+        <div className="searchbar-container">
+          {radioData ? (
+            <Searchbar
+              setSearchYear={setSearchYear}
+              setSearchMonth={setSearchMonth}
+              setSearchDay={setSearchDay}
+            />
+          ) : null}
+        </div>
+
+        <div className="queue-table">
+          <Table
+            radioData={radioData}
+            searchDay={searchDay}
+            searchMonth={searchMonth}
+            searchYear={searchYear}
+            setSelectedSong={setSelectedSong}
+            setSongId={setSongId}
+          />
+        </div>
       </div>
     </div>
   );

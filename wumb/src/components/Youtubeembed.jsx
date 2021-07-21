@@ -4,7 +4,7 @@ import ControlBar from "./ControlBar";
 
 const YoutubeEmbed = ({ radioData, selectedSong, songId, setSongId }) => {
   const [youTubeData, setYouTubeData] = useState(selectedSong);
-  const [onSwitch, setOnSwitch] = useState("true");
+  const [onSwitch, setOnSwitch] = useState("false");
 
   // Fetches youtube data using the 'selectedSong' info
   useEffect(() => {
@@ -32,10 +32,11 @@ const YoutubeEmbed = ({ radioData, selectedSong, songId, setSongId }) => {
   if (selectedSong && youTubeData) {
     return (
       <div className="embed-container">
-        <button onClick={urlSwitch}>Toggle Live Search</button>
+        {/* <button onClick={urlSwitch}>Toggle Live Search</button>
         <div className="true-message">
           <h2> Live search is currently {onSwitch}</h2>
-        </div>
+        </div> */}
+
         <div className="video-container">
           <div className="video-responsive">
             <iframe

@@ -2,10 +2,6 @@ body {
   background-image: url('https://assets.hongkiat.com/uploads/wood-textures/brown-wood.jpg');
 }
   
-iframe {
-    border: 2rem solid black;
-    border-radius: 10%;
-}
 
 .arrow-button {
   margin: 1rem;
@@ -61,22 +57,12 @@ background-color: pink;
 padding: .5em;
 font-family: 'IBM Plex Mono', monospace;
 font-size: small;
-}
-
-
-.home-screen-container{
-  margin-top:3rem;
-  background-color: rgb(250, 237, 186);
-  padding-top: 1%;
-  padding-bottom: 3%;
-  border: 10px solid red;
-  border-radius: 25%;
-  font-family: 'IBM Plex Mono', monospace;
+letter-spacing: .5em;
 }
 
 
 .icon-button {
-  width: 30%;
+  width: 10%;
 }
 
 .nav {
@@ -85,13 +71,19 @@ font-size: small;
   justify-content: space-between;
 }
 
-.react-calendar__month-view__weekdays {
-  color: gray;
+.player-and-searchbar {
+  width: 50%;
+  border-radius: 25%;
+  background-color: black;
+  margin: auto;
+  border-radius: 10%;
+  border:  3px solid white;
 }
 
-.react-calendar__navigation button {
-  font-size: 1em;
+.player-and-searchbar-container {
+ margin: auto
 }
+
 
 .result-calendar {
   width: 30%;
@@ -118,22 +110,29 @@ font-size: small;
   background-color: pink;
 }
 
-.table {
+
+.table-and-searchbar {
   background-color: rgb(250, 237, 186);
-  padding-top: 1%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 3%;
   border: 10px solid black;
   height: 50%;
   border-radius: 25%;
   font-family: 'IBM Plex Mono', monospace;
+
 }
 
+
 .table-container {
-  display:flex;
+display:flex;
 flex-direction: row;
 justify-content: space-around;
+}
+
+.video-container {
+  background-color: black;
+  width: 30%;
+  margin:auto;
+  padding: 2rem;
+  border-radius: 20%;
 }
 
 #header-title {
@@ -162,70 +161,3 @@ justify-content: space-around;
   width: 25%;
 }
 
-
-
-/* .video-responsive {
-  margin: auto;
-  width: 20%;
-  border: 2rem solid rgb(50, 48, 48);
-  border-radius: 15%;
-} */
-
-
-/* Postman Styles  */
-
-#LeftSideBarContainerOffline {
-
-  float: left;
-  width: 240px;
-  margin: 38px 0 0 0;
-  padding: 20px 0 20px 0;
-  background-color: #F2F2E8;
-  display: inline;
-  z-index: 1;
-
-}
-
-#ArchiveTable {
-
-  width: 240px;
-  margin: 0px;
-  border: none;
-  border-collapse: collapse;
-
-}
-
-.ArchiveTableCell {
-
-  width: 240px;
-  padding: 0px;
-  text-align: center;
-  vertical-align: top;
-
-}
-
-#MainContentContainerOffline {
-
-  float: left;
-  width: 674px;
-  min-height: 420px;
-  margin: 38px 0 0 0;
-  padding: 0 0 20px 10px;
-  background-color: #F2F2E8;
-  display: inline;
-  z-index: 1;
-
-}
-
-#TitleBannerContainer {
-
-  position: absolute;
-  left: 286px;
-  top: 201px;
-  width: 446px;
-  height: 30px;
-  margin: 0px;
-  padding: 0px;
-  display: inline;
-  z-index: 2;
-}
