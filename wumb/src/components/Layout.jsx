@@ -14,6 +14,8 @@ function Layout(isLoggedIn, setisLoggedIn, username) {
       />
 
       <Main isLoggedIn={isLoggedIn} />
+
+      <footer className="footer"></footer>
     </div>
   );
 }

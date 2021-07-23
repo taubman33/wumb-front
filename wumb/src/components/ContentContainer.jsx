@@ -64,7 +64,7 @@ const EmbedContainer = () => {
           </div>
         ) : null}
       </div>
-
+      
       <div className="table-and-searchbar">
         <div className="searchbar-container">
           {radioData ? (
