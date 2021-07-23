@@ -176,3 +176,19 @@ justify-content: space-around;
 
 
 
+@media only screen and (max-width: 600px) {
+  body{
+    text-align: center;
+  }
+
+ .header-text2{
+   display: none;
+ }
+
+ .player-and-searchbar {
+  border-radius: 25%;
+  background-color: none;
+  margin: auto;
+}
+
+}
