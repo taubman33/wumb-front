@@ -4,7 +4,7 @@ import ControlBar from "./ControlBar";
 
 const YoutubeEmbed = ({ radioData, selectedSong, songId, setSongId }) => {
   const [youTubeData, setYouTubeData] = useState(selectedSong);
-  const [onSwitch, setOnSwitch] = useState("false");
+  const [onSwitch, setOnSwitch] = useState("true");
 
   // Fetches youtube data using the 'selectedSong' info
   useEffect(() => {

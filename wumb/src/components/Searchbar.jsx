@@ -35,10 +35,12 @@ function Searchbar({ setSearchYear, setSearchMonth, setSearchDay }) {
       
       {showCalendar ? (
         <>
-          <input type="date" label="date" onChange={handleDateClick} />
+        <div className ="input-container">
+          <input className = "date-input" type="date" label="date" onChange={handleDateClick} />
           <button className="search-button" onClick={searchWUMB}>
             Search
           </button>
+         </div> 
           <br />
           <button onClick={toggleCalendar} class="cal-button">Close Calendar</button>
         </>
