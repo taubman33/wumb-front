@@ -8,8 +8,6 @@ const YoutubeEmbed = ({ radioData, selectedSong, songId, setSongId }) => {
 
   // Fetches youtube data using the 'selectedSong' info
   useEffect(() => {
-    const artistUrl = selectedSong.artist.replace(/ /g, "%20");
-    const titleUrl = selectedSong.title.replace(/ /g, "%20");
     
     const base = (process.env.REACT_APP_BACKEND == `local`) 
                   ? `http://localhost:3003/search-yt-api`
@@ -17,6 +15,7 @@ const YoutubeEmbed = ({ radioData, selectedSong, songId, setSongId }) => {
     
     const trackInfo = {
       time: selectedSong.time,
+      date: selectedSong.date,
       title: selectedSong.title,
       artist: selectedSong.artist,
       live: onSwitch,
@@ -27,7 +26,6 @@ const YoutubeEmbed = ({ radioData, selectedSong, songId, setSongId }) => {
           }, "?" )
     
     const url = base + params
-    console.log(url)      
 
     fetch(url)
       .then((res) => res.json())
